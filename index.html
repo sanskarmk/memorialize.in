@@ -344,10 +344,17 @@
     letter-spacing: -0.05em;
   }
   .step-icon {
-    width: 48px; height: 48px;
+    width: 56px; height: 56px;
     border: 1px solid var(--border);
+    border-radius: 50%;
+    background: rgba(0,210,255,0.08);
     display: flex; align-items: center; justify-content: center;
-    margin-bottom: 32px; font-size: 22px;
+    margin-bottom: 32px;
+  }
+  .step-icon img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
   }
   .step-title {
     font-family: var(--font-display); font-size: 22px; font-weight: 700;
@@ -491,7 +498,9 @@
     position: absolute; inset: 0;
     background: radial-gradient(ellipse at center, rgba(0,210,255,0.08) 0%, transparent 70%);
   }
-  .gen-mini { font-size: 48px; animation: float 4s ease-in-out infinite; }
+  .gen-mini { animation: float 4s ease-in-out infinite; }
+  .gen-mini img { width: 56px; height: 56px; object-fit: contain; }
+  .icon-inline { width: 16px; height: 16px; object-fit: contain; vertical-align: middle; margin-right: 6px; }
   .gen-info { padding: 14px 16px; }
   .gen-style {
     font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em;
@@ -523,7 +532,14 @@
   .gallery-item:hover .gallery-overlay { opacity: 1; }
   .gallery-thumb {
     aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center;
-    font-size: 60px; background: var(--bg2); position: relative;
+    background: var(--bg2); position: relative;
+  }
+  .gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.92;
+    filter: saturate(1.1) contrast(1.05);
   }
   .gallery-thumb::before {
     content: '';
@@ -561,7 +577,22 @@
     transform: scaleX(0); transition: transform 0.3s; transform-origin: left;
   }
   .occasion-tile:hover::after { transform: scaleX(1); }
-  .occasion-icon { font-size: 36px; margin-bottom: 16px; }
+  .occasion-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: rgba(0,210,255,0.08);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .occasion-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
   .occasion-name {
     font-family: var(--font-display); font-size: 16px; font-weight: 700;
     margin-bottom: 8px;
@@ -668,10 +699,16 @@
   .testimonial-text { font-size: 14px; line-height: 1.8; color: var(--text-muted); margin-bottom: 28px; }
   .testimonial-author { display: flex; align-items: center; gap: 14px; }
   .author-avatar {
-    width: 40px; height: 40px; border-radius: 50%;
-    border: 1px solid var(--border); background: var(--surface2);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .author-name { font-family: var(--font-display); font-size: 15px; font-weight: 700; }
   .author-role { font-family: var(--font-mono); font-size: 10px; color: var(--cyan); letter-spacing: 0.08em; }
@@ -772,6 +809,8 @@
       <li><a href="#how">Process</a></li>
       <li><a href="#create">Create</a></li>
       <li><a href="#gallery">Gallery</a></li>
+      <li><a href="stories.html">Stories</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#track">Track</a></li>
     </ul>
@@ -893,19 +932,19 @@
     <div class="steps-grid">
       <div class="step-card reveal reveal-delay-1">
         <div class="step-num">01</div>
-        <div class="step-icon">🧬</div>
+        <div class="step-icon"><img src="https://img.icons8.com/fluency/96/dna-helix.png" alt="Describe"></div>
         <h3 class="step-title">Describe the Person</h3>
         <p class="step-desc">Upload a photo, enter a name, profession, hobbies, personality — the more you share, the more personal the design. Our AI reads between the lines.</p>
       </div>
       <div class="step-card reveal reveal-delay-2">
         <div class="step-num">02</div>
-        <div class="step-icon">⚡</div>
+        <div class="step-icon"><img src="https://img.icons8.com/fluency/96/artificial-intelligence.png" alt="Generate"></div>
         <h3 class="step-title">AI Generates Concepts</h3>
         <p class="step-desc">Our generative model produces 4 unique 3D design concepts tailored to the person's identity. You pick your favourite — or ask for a fresh batch.</p>
       </div>
       <div class="step-card reveal reveal-delay-3">
         <div class="step-num">03</div>
-        <div class="step-icon">📦</div>
+        <div class="step-icon"><img src="https://img.icons8.com/fluency/96/cardboard-box.png" alt="Ship"></div>
         <h3 class="step-title">We Print & Ship</h3>
         <p class="step-desc">Your chosen design is converted to STL, printed on our precision 3D setup, quality-checked, and shipped to your door in a premium gift box.</p>
       </div>
@@ -957,7 +996,7 @@
               <div class="form-group">
                 <label class="form-label">Upload Photo (Optional)</label>
                 <div class="upload-zone" id="upload-zone">
-                  <div class="upload-icon">📷</div>
+                  <div class="upload-icon"><img src="https://img.icons8.com/fluency/96/camera.png" alt="Upload photo" style="width:28px;height:28px;object-fit:contain"></div>
                   <div class="upload-text">Drag & drop or click to upload</div>
                   <div class="upload-sub">PNG, JPG up to 10MB</div>
                 </div>
@@ -987,16 +1026,16 @@
               <div class="form-group">
                 <label class="form-label">Hobbies & Interests</label>
                 <div class="tag-group" id="hobby-tags">
-                  <div class="tag" onclick="toggleTag(this)">⚽ Football</div>
-                  <div class="tag" onclick="toggleTag(this)">📚 Reading</div>
-                  <div class="tag" onclick="toggleTag(this)">🍳 Cooking</div>
-                  <div class="tag" onclick="toggleTag(this)">🎮 Gaming</div>
-                  <div class="tag" onclick="toggleTag(this)">🎵 Music</div>
-                  <div class="tag" onclick="toggleTag(this)">✈️ Travel</div>
-                  <div class="tag" onclick="toggleTag(this)">🎨 Art</div>
-                  <div class="tag" onclick="toggleTag(this)">🏋️ Fitness</div>
-                  <div class="tag" onclick="toggleTag(this)">🌿 Nature</div>
-                  <div class="tag" onclick="toggleTag(this)">💻 Tech</div>
+                  <div class="tag" onclick="toggleTag(this)">Football</div>
+                  <div class="tag" onclick="toggleTag(this)">Reading</div>
+                  <div class="tag" onclick="toggleTag(this)">Cooking</div>
+                  <div class="tag" onclick="toggleTag(this)">Gaming</div>
+                  <div class="tag" onclick="toggleTag(this)">Music</div>
+                  <div class="tag" onclick="toggleTag(this)">Travel</div>
+                  <div class="tag" onclick="toggleTag(this)">Art</div>
+                  <div class="tag" onclick="toggleTag(this)">Fitness</div>
+                  <div class="tag" onclick="toggleTag(this)">Nature</div>
+                  <div class="tag" onclick="toggleTag(this)">Tech</div>
                 </div>
               </div>
               <div class="form-group">
@@ -1028,8 +1067,8 @@
           <div style="font-family:var(--font-display);font-size:22px;font-weight:700;margin-bottom:8px">Dr. Priya Sharma</div>
           <div style="font-family:var(--font-mono);font-size:10px;color:var(--cyan);letter-spacing:0.1em;margin-bottom:24px">BIRTHDAY GIFT</div>
           <div style="font-size:12px;color:var(--text-muted);line-height:1.8">
-            <div style="margin-bottom:8px">🩺 Surgeon</div>
-            <div style="margin-bottom:8px">🎵 Music · ✈️ Travel · 📚 Reading</div>
+            <div style="margin-bottom:8px">Surgeon</div>
+            <div style="margin-bottom:8px">Music · Travel · Reading</div>
             <div>Elegant · Adventurous</div>
           </div>
           <div style="margin-top:32px;padding:16px;border:1px solid var(--border)">
@@ -1046,7 +1085,7 @@
           <div class="gen-grid">
             <div class="gen-card selected" onclick="selectGen(this)">
               <div class="gen-preview">
-                <div class="gen-mini">🧬</div>
+                <div class="gen-mini"><img src="https://img.icons8.com/fluency/96/dna-helix.png" alt="DNA concept"></div>
               </div>
               <div class="gen-info">
                 <div class="gen-style">Realistic · Detailed</div>
@@ -1055,7 +1094,7 @@
             </div>
             <div class="gen-card" onclick="selectGen(this)">
               <div class="gen-preview">
-                <div class="gen-mini">🗺️</div>
+                <div class="gen-mini"><img src="https://img.icons8.com/fluency/96/world-map.png" alt="Explorer concept"></div>
               </div>
               <div class="gen-info">
                 <div class="gen-style">Dynamic · Explorer</div>
@@ -1064,7 +1103,7 @@
             </div>
             <div class="gen-card" onclick="selectGen(this)">
               <div class="gen-preview">
-                <div class="gen-mini">🎵</div>
+                <div class="gen-mini"><img src="https://img.icons8.com/fluency/96/musical-notes.png" alt="Music concept"></div>
               </div>
               <div class="gen-info">
                 <div class="gen-style">Artistic · Expressive</div>
@@ -1073,7 +1112,7 @@
             </div>
             <div class="gen-card" onclick="selectGen(this)">
               <div class="gen-preview">
-                <div class="gen-mini">⭐</div>
+                <div class="gen-mini"><img src="https://img.icons8.com/fluency/96/star.png" alt="Premium concept"></div>
               </div>
               <div class="gen-info">
                 <div class="gen-style">Abstract · Sculptural</div>
@@ -1092,7 +1131,7 @@
       <div class="wizard-body" id="step-3" style="display:none">
         <div class="wizard-sidebar">
           <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.15em;color:var(--text-dim);margin-bottom:16px">SELECTED DESIGN</div>
-          <div style="background:var(--bg2);border:1px solid var(--border);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:60px;margin-bottom:20px">🧬</div>
+          <div style="background:var(--bg2);border:1px solid var(--border);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;margin-bottom:20px"><img src="https://img.icons8.com/fluency/96/dna-helix.png" alt="Preview model" style="width:64px;height:64px;object-fit:contain"></div>
           <div style="font-family:var(--font-mono);font-size:10px;color:var(--gold);letter-spacing:0.1em;margin-bottom:8px">Realistic · Detailed</div>
           <div style="font-size:12px;color:var(--text-muted)">Elegant pose inspired by medical precision and love of classical music</div>
           <div style="margin-top:32px;border-top:1px solid var(--border);padding-top:24px">
@@ -1170,8 +1209,7 @@
       <div class="wizard-body" id="step-4" style="display:none">
         <div class="wizard-sidebar">
           <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.15em;color:var(--text-dim);margin-bottom:16px">ORDER PREVIEW</div>
-          <div style="background:var(--bg2);border:1px solid var(--border);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:72px;margin-bottom:20px;position:relative">
-            🧬
+          <div style="background:var(--bg2);border:1px solid var(--border);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:72px;margin-bottom:20px;position:relative"><img src="https://img.icons8.com/fluency/96/dna-helix.png" alt="Approved design" style="width:78px;height:78px;object-fit:contain">
             <div style="position:absolute;bottom:12px;right:12px;font-family:var(--font-mono);font-size:9px;color:var(--cyan);background:rgba(0,210,255,0.08);border:1px solid rgba(0,210,255,0.2);padding:4px 8px">APPROVED</div>
           </div>
           <div class="promo-group" style="display:flex;gap:8px;margin-top:8px">
@@ -1201,7 +1239,7 @@
             </div>
           </div>
           <div style="display:flex;align-items:center;gap:12px;padding:16px;background:rgba(0,210,255,0.04);border:1px solid rgba(0,210,255,0.15);margin-bottom:28px">
-            <span style="font-size:20px">🚀</span>
+            <img class="icon-inline" src="https://img.icons8.com/fluency/96/rocket.png" alt="Dispatch">
             <span style="font-size:13px;color:var(--text-muted)">Estimated dispatch: <strong style="color:var(--text)">5–7 business days</strong> · Estimated delivery: <strong style="color:var(--text)">Mar 14–16, 2026</strong></span>
           </div>
           <div style="display:flex;justify-content:space-between">
@@ -1215,9 +1253,9 @@
       <div class="wizard-body" id="step-5" style="display:none">
         <div class="wizard-sidebar">
           <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.15em;color:var(--text-dim);margin-bottom:24px">SECURE CHECKOUT</div>
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;color:var(--text-muted);font-size:13px"><span>🔒</span> 256-bit SSL encrypted</div>
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;color:var(--text-muted);font-size:13px"><span>💳</span> Stripe · UPI · Wallets</div>
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:32px;color:var(--text-muted);font-size:13px"><span>↩️</span> 7-day return policy</div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;color:var(--text-muted);font-size:13px"><img class="icon-inline" src="https://img.icons8.com/fluency/96/lock-2.png" alt="Secure"> 256-bit SSL encrypted</div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;color:var(--text-muted);font-size:13px"><img class="icon-inline" src="https://img.icons8.com/fluency/96/bank-card-back-side.png" alt="Payments"> Stripe · UPI · Wallets</div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:32px;color:var(--text-muted);font-size:13px"><img class="icon-inline" src="https://img.icons8.com/fluency/96/return-purchase.png" alt="Returns"> 7-day return policy</div>
           <div style="padding:20px;border:1px solid var(--border);background:var(--surface2)">
             <div class="tracker-info-row" style="border:none;padding:0 0 12px 0"><span class="label">Order Total</span></div>
             <div style="font-family:var(--font-display);font-size:36px;font-weight:800;color:var(--cyan)">₹1,886</div>
@@ -1237,9 +1275,9 @@
           </div>
           <div style="font-family:var(--font-display);font-size:22px;font-weight:700;margin:24px 0 20px">Payment Method</div>
           <div style="display:flex;gap:12px;margin-bottom:24px" id="payment-tabs">
-            <div class="tag selected" onclick="selectOption('payment-tabs', this)">💳 Card</div>
-            <div class="tag" onclick="selectOption('payment-tabs', this)">📱 UPI</div>
-            <div class="tag" onclick="selectOption('payment-tabs', this)">👛 Wallet</div>
+            <div class="tag selected" onclick="selectOption('payment-tabs', this)">Card</div>
+            <div class="tag" onclick="selectOption('payment-tabs', this)">UPI</div>
+            <div class="tag" onclick="selectOption('payment-tabs', this)">Wallet</div>
           </div>
           <div style="background:var(--surface2);border:1px solid var(--border);padding:24px;margin-bottom:24px">
             <div class="form-group"><label class="form-label">Card Number</label><input class="form-input" type="text" placeholder="4242 4242 4242 4242"></div>
@@ -1270,32 +1308,32 @@
     </div>
     <div class="gallery-grid reveal">
       <div class="gallery-item">
-        <div class="gallery-thumb"><span>👨‍🍳</span></div>
+        <div class="gallery-thumb"><img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=700&q=80" alt="Chef Marco portrait"></div>
         <div class="gallery-meta"><div class="gallery-name">Chef Marco</div><div class="gallery-occasion">// FAREWELL GIFT</div></div>
         <div class="gallery-overlay">View Details →</div>
       </div>
       <div class="gallery-item">
-        <div class="gallery-thumb" style="aspect-ratio:1/1.3"><span>🧑‍🎓</span></div>
+        <div class="gallery-thumb" style="aspect-ratio:1/1.3"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=700&q=80" alt="Dr. Ananya portrait"></div>
         <div class="gallery-meta"><div class="gallery-name">Dr. Ananya</div><div class="gallery-occasion">// GRADUATION</div></div>
         <div class="gallery-overlay">View Details →</div>
       </div>
       <div class="gallery-item">
-        <div class="gallery-thumb"><span>🏋️</span></div>
+        <div class="gallery-thumb"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=700&q=80" alt="Athlete Rohan portrait"></div>
         <div class="gallery-meta"><div class="gallery-name">Athlete Rohan</div><div class="gallery-occasion">// BIRTHDAY</div></div>
         <div class="gallery-overlay">View Details →</div>
       </div>
       <div class="gallery-item">
-        <div class="gallery-thumb" style="aspect-ratio:1/0.8"><span>🎸</span></div>
+        <div class="gallery-thumb" style="aspect-ratio:1/0.8"><img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=700&q=80" alt="Musician Zara portrait"></div>
         <div class="gallery-meta"><div class="gallery-name">Musician Zara</div><div class="gallery-occasion">// ANNIVERSARY</div></div>
         <div class="gallery-overlay">View Details →</div>
       </div>
       <div class="gallery-item">
-        <div class="gallery-thumb"><span>🌿</span></div>
+        <div class="gallery-thumb"><img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=700&q=80" alt="Botanist Leila portrait"></div>
         <div class="gallery-meta"><div class="gallery-name">Botanist Leila</div><div class="gallery-occasion">// JUST BECAUSE</div></div>
         <div class="gallery-overlay">View Details →</div>
       </div>
       <div class="gallery-item">
-        <div class="gallery-thumb" style="aspect-ratio:1/1.2"><span>👩‍💻</span></div>
+        <div class="gallery-thumb" style="aspect-ratio:1/1.2"><img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=700&q=80" alt="Developer Preethi portrait"></div>
         <div class="gallery-meta"><div class="gallery-name">Dev Preethi</div><div class="gallery-occasion">// CORPORATE</div></div>
         <div class="gallery-overlay">View Details →</div>
       </div>
@@ -1314,27 +1352,27 @@
     </div>
     <div class="occasions-grid reveal">
       <div class="occasion-tile" onclick="scrollToCreate()">
-        <div class="occasion-icon">🎂</div>
+        <div class="occasion-icon"><img src="https://img.icons8.com/fluency/96/birthday-cake.png" alt="Birthday"></div>
         <div class="occasion-name">Birthday</div>
         <div class="occasion-desc">The most personal gift they've ever received</div>
       </div>
       <div class="occasion-tile" onclick="scrollToCreate()">
-        <div class="occasion-icon">💍</div>
+        <div class="occasion-icon"><img src="https://img.icons8.com/fluency/96/wedding-rings.png" alt="Anniversary"></div>
         <div class="occasion-name">Anniversary</div>
         <div class="occasion-desc">Sculpt the love story, literally</div>
       </div>
       <div class="occasion-tile" onclick="scrollToCreate()">
-        <div class="occasion-icon">🎓</div>
+        <div class="occasion-icon"><img src="https://img.icons8.com/fluency/96/graduation-cap.png" alt="Graduation"></div>
         <div class="occasion-name">Graduation</div>
         <div class="occasion-desc">Capture them at their finest moment</div>
       </div>
       <div class="occasion-tile" onclick="scrollToCreate()">
-        <div class="occasion-icon">✈️</div>
+        <div class="occasion-icon"><img src="https://img.icons8.com/fluency/96/around-the-globe.png" alt="Farewell"></div>
         <div class="occasion-name">Farewell</div>
         <div class="occasion-desc">Something to carry forward, always</div>
       </div>
       <div class="occasion-tile" onclick="scrollToCreate()">
-        <div class="occasion-icon">🏢</div>
+        <div class="occasion-icon"><img src="https://img.icons8.com/fluency/96/organization.png" alt="Corporate"></div>
         <div class="occasion-name">Corporate</div>
         <div class="occasion-desc">Recognition that actually means something</div>
       </div>
@@ -1484,7 +1522,7 @@
         <div class="testimonial-stars">★★★★★</div>
         <p class="testimonial-text">I literally teared up when I saw it. They captured my dad perfectly — the way he stands, the tools in his hand. It's uncanny. He cried too.</p>
         <div class="testimonial-author">
-          <div class="author-avatar">👩</div>
+          <div class="author-avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Aanya"></div>
           <div>
             <div class="author-name">Sneha Reddy</div>
             <div class="author-role">// BIRTHDAY GIFT · HYDERABAD</div>
@@ -1495,7 +1533,7 @@
         <div class="testimonial-stars">★★★★★</div>
         <p class="testimonial-text">Ordered 12 units for our annual employee awards. Everyone was genuinely shocked. This is the only corporate gift I've ever given that got a standing ovation.</p>
         <div class="testimonial-author">
-          <div class="author-avatar">👨‍💼</div>
+          <div class="author-avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Raghav"></div>
           <div>
             <div class="author-name">Arjun Mehta</div>
             <div class="author-role">// CORPORATE ORDER · BANGALORE</div>
@@ -1506,7 +1544,7 @@
         <div class="testimonial-stars">★★★★★</div>
         <p class="testimonial-text">The AI just... got her. I put in three lines of description and the first design was already perfect. The final product quality is stunning. 10/10.</p>
         <div class="testimonial-author">
-          <div class="author-avatar">🧑</div>
+          <div class="author-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Nidhi"></div>
           <div>
             <div class="author-name">Kiran Nair</div>
             <div class="author-role">// ANNIVERSARY GIFT · MUMBAI</div>
@@ -1698,7 +1736,7 @@
     const wizard = document.querySelector('.wizard-ui');
     wizard.innerHTML = `
       <div style="padding:80px;text-align:center">
-        <div style="font-size:64px;margin-bottom:24px;animation:float 3s ease-in-out infinite">📦</div>
+        <div style="margin-bottom:24px;"><img src="https://img.icons8.com/fluency/96/order-delivered.png" alt="Order placed" style="width:72px;height:72px;animation:float 3s ease-in-out infinite"></div>
         <div style="font-family:var(--font-display);font-size:40px;font-weight:800;margin-bottom:12px">Order Placed!</div>
         <div style="font-family:var(--font-mono);font-size:14px;color:var(--cyan);letter-spacing:0.1em;margin-bottom:24px"># MEM-2026-0043</div>
         <p style="font-size:15px;color:var(--text-muted);max-width:400px;margin:0 auto 40px;line-height:1.7">We've received your order. A confirmation has been sent to your email. Your model enters production shortly.</p>
