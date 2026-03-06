@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — MEMORIALIZE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#020408; --surface:rgba(255,255,255,0.03); --border:rgba(0,210,255,.18); --cyan:#00d2ff; --text:#e8f4ff; --muted:rgba(232,244,255,.6); }
+    *{box-sizing:border-box;margin:0;padding:0} body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text)}
+    .container{max-width:1100px;margin:0 auto;padding:0 28px}
+    nav{padding:24px 0;border-bottom:1px solid var(--border)}
+    a{color:inherit;text-decoration:none}
+    .logo{font-family:Syne,sans-serif;font-weight:800;letter-spacing:.15em} .logo span{color:var(--cyan)}
+    .hero{padding:80px 0 56px} .tag{font:11px "Space Mono";letter-spacing:.14em;color:var(--cyan);text-transform:uppercase}
+    h1{font-family:Syne,sans-serif;font-size:56px;line-height:.95;margin:16px 0 18px} p{color:var(--muted);line-height:1.8}
+    .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;margin:36px 0}
+    .card{background:var(--surface);border:1px solid var(--border);padding:28px}
+    .card h3{font-family:Syne,sans-serif;font-size:24px;margin-bottom:10px}
+    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:18px}
+    .value{background:var(--surface);border:1px solid var(--border);padding:20px}
+    .value img{width:30px;height:30px;margin-bottom:10px}
+    .cta{margin:48px 0 72px;padding:28px;border:1px solid var(--border);background:rgba(0,210,255,.05)}
+    @media (max-width:900px){h1{font-size:42px}.grid,.values{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:20px;">
+      <a class="logo" href="index.html">MEMO<span>RIALIZE</span></a>
+      <div style="display:flex;gap:18px;font:11px 'Space Mono';letter-spacing:.1em;">
+        <a href="index.html">Home</a>
+        <a href="stories.html">Stories</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero container">
+    <div class="tag">Our Mission</div>
+    <h1>Crafting memories people can hold.</h1>
+    <p>MEMORIALIZE turns your stories into physical, display-worthy 3D gifts. We combine AI-assisted concepting, design review loops, and precision print finishing to help people celebrate milestones with something meaningful and lasting.</p>
+
+    <div class="grid">
+      <article class="card">
+        <h3>How we build each piece</h3>
+        <p>Every order starts from human details: personality, profession, hobbies, quirks, and the moment you’re celebrating. Our generation pipeline creates multiple visual concepts, then our team manually validates posture, expression, and structural print integrity before dispatch.</p>
+      </article>
+      <article class="card">
+        <h3>Built for gifting</h3>
+        <p>From matte and resin finishes to engraved bases and premium packaging, each object is designed to be unboxed as an experience—not just a product.</p>
+      </article>
+    </div>
+
+    <h2 style="font-family:Syne,sans-serif;font-size:30px;margin:26px 0 14px">What we value</h2>
+    <div class="values">
+      <div class="value"><img src="https://img.icons8.com/fluency/96/approval.png" alt="Quality"><h4>Quality</h4><p>Each design is reviewed before print and before packaging.</p></div>
+      <div class="value"><img src="https://img.icons8.com/fluency/96/privacy.png" alt="Privacy"><h4>Privacy</h4><p>Your photos and profile data are never publicly surfaced.</p></div>
+      <div class="value"><img src="https://img.icons8.com/fluency/96/clock.png" alt="Turnaround"><h4>Fast Turnaround</h4><p>Most orders are dispatched in 5–7 business days.</p></div>
+    </div>
+
+    <div class="cta">
+      <h3 style="font-family:Syne,sans-serif;margin-bottom:8px">Ready to create your first memorialized gift?</h3>
+      <p style="margin-bottom:12px">Start with a profile, choose your concept, and we’ll handle print and delivery.</p>
+      <a href="index.html#create" style="font:12px 'Space Mono';letter-spacing:.1em;color:var(--cyan)">Go to Order Builder →</a>
+    </div>
+  </section>
+</body>
+</html>
