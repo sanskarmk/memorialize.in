@@ -1,5 +1,29 @@
 # memorialize.in
 
+A light-themed marketing website for **Memorialize**, a personalized gifting solution focused on custom 3D keepsakes.
+
+## Pages
+
+- `index.html` — Main landing page with:
+  - Hero section
+  - How-it-works flow
+  - Occasion highlights
+  - Gift gallery
+  - Testimonials and CTA
+- `about.html` — Mission, process, values, and brand promise
+- `stories.html` — Real customer story examples
+- `CNAME` — Custom-domain config
+
+## Design direction
+
+- Warm, light visual theme (instead of futuristic dark theme)
+- Editorial typography for a premium gifting feel
+- Soft cards, rounded layouts, and approachable copy
+- Image-first storytelling for personalization use-cases
+
+## Run locally
+
+Open directly in browser, or serve with Python:
 Premium marketing website concept for **MEMORIALIZE**, an AI-assisted 3D printed gifting brand.
 
 ## What’s in this project
