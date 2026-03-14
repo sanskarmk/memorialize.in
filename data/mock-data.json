@@ -1,53 +1,76 @@
 {
   "brand": {
     "name": "Memorialize",
-    "heroTitle": "Turn people, stories, and emotions into unforgettable 3D gifts.",
-    "heroSubtitle": "Create a profile, preview AI concepts, approve your favorite design, and get it printed + delivered with premium finishing."
+    "heroTitle": "Personalized gifting, reimagined with AI previews and handcrafted 3D prints.",
+    "heroSubtitle": "One-stop experience: create profile → generate concepts → approve final design → print and deliver."
   },
   "home": {
+    "heroImage": "https://images.unsplash.com/photo-1553531889-56cc480ac5cb?auto=format&fit=crop&w=1400&q=80",
     "howItWorks": [
-      { "step": 1, "title": "Create Gift Profile", "desc": "Add recipient name, occasion, personality, hobbies, style, and references." },
-      { "step": 2, "title": "AI Concept Generation", "desc": "Get multiple gift previews in different artistic and material styles." },
-      { "step": 3, "title": "Approve & Print", "desc": "Select one concept, finalize details, and we start production on demand." },
-      { "step": 4, "title": "Ship & Surprise", "desc": "Track your order and deliver a deeply personal gift experience." }
+      { "step": 1, "title": "Create Gift Profile", "desc": "Add recipient details, occasion, personality, hobbies, and references." },
+      { "step": 2, "title": "Generate AI Concepts", "desc": "View multiple visual directions that simulate final product outcomes." },
+      { "step": 3, "title": "Finalize & Customize", "desc": "Select model style, size, finish, engraving, and packaging." },
+      { "step": 4, "title": "Print & Ship", "desc": "Production starts after approval, followed by secure tracked delivery." }
     ],
     "categories": [
-      { "type": "3D Figurines", "name": "People Portrait Models", "desc": "High-detail miniatures based on photos, vibe, and story context." },
-      { "type": "Corporate", "name": "Team Farewell Gifts", "desc": "Custom desk-ready pieces for promotions, exits, and milestone recognitions." },
-      { "type": "Relationship", "name": "Anniversary Keepsakes", "desc": "Romantic, playful, or elegant styles with engraved bases and message cards." },
-      { "type": "Family", "name": "Birthday & Parents Day", "desc": "Emotion-first designs with optional premium packaging and handwritten notes." },
-      { "type": "Pets", "name": "Pet Memorial Sculpts", "desc": "Sensitive, beautiful physical mementos to preserve loving memories." },
-      { "type": "Collections", "name": "Limited Edition Themes", "desc": "Festival and seasonal designs: Diwali, New Year, Wedding season, and more." }
+      { "type": "People", "name": "Portrait Figurines", "desc": "Custom person-centric models with expressive facial details." },
+      { "type": "Couples", "name": "Anniversary Editions", "desc": "Romantic poses and elegant base engraving for milestone gifts." },
+      { "type": "Corporate", "name": "Team & Farewell Gifts", "desc": "Professional desk keepsakes for managers, founders, and teams." },
+      { "type": "Family", "name": "Parents & Siblings", "desc": "Story-backed models for birthdays and emotional celebrations." },
+      { "type": "Pet", "name": "Pet Memory Pieces", "desc": "Meaningful sculpted tributes for pet companions and memorial moments." },
+      { "type": "Festival", "name": "Seasonal Collections", "desc": "Limited festive themes for Diwali, New Year, and wedding season." }
     ],
     "testimonials": [
-      { "name": "Rhea Kapoor", "location": "Mumbai", "quote": "I cried when I saw the final print. It looked exactly like my dad in his favorite pose." },
-      { "name": "Sarthak Jain", "location": "Bengaluru", "quote": "The AI previews were so good we had a hard time picking just one." },
-      { "name": "Neha & Arjun", "location": "Delhi", "quote": "Best anniversary gift we’ve done. Packaging and finish felt luxury-level." }
+      { "name": "Megha A.", "location": "Gurugram", "quote": "The preview looked beautiful, but the final print was even better in person." },
+      { "name": "Varun P.", "location": "Pune", "quote": "This is the first gift where everyone asked me where I got it from." },
+      { "name": "Ankit & Rhea", "location": "Mumbai", "quote": "Very smooth flow from profile to delivery. Felt premium throughout." }
     ],
     "faq": [
-      { "q": "How long does delivery take?", "a": "Most orders are delivered in 5–8 business days, depending on complexity and location." },
-      { "q": "Can I request edits after AI preview?", "a": "Yes. You can request refinements before approving the final print-ready design." },
-      { "q": "What materials are available?", "a": "PLA+, resin-style finish, matte paint options, and premium base engraving." },
-      { "q": "Is COD available?", "a": "You can support prepaid, partial advance, or COD policies based on your operations." }
+      { "q": "How accurate are AI previews?", "a": "Previews are close visual directions; final model goes through manual quality refinement before printing." },
+      { "q": "Can I ask for revisions?", "a": "Yes, you can request edits before approving the print-ready design." },
+      { "q": "How fast is shipping?", "a": "Usually 5–8 business days depending on style complexity and location." },
+      { "q": "Can this support COD or partial advance?", "a": "Yes, the checkout layer can be configured for your preferred payment workflow." }
     ],
     "pricing": [
-      { "plan": "Mini", "price": "999", "features": ["~8cm size", "Single color", "Standard box"] },
-      { "plan": "Classic", "price": "1499", "features": ["~12cm size", "Enhanced detailing", "Gift packaging"] },
-      { "plan": "Premium", "price": "2499", "features": ["~15cm size", "Painted finish", "Engraved base + premium box"] }
+      { "plan": "Mini", "price": "999", "features": ["8cm figurine", "Standard finish", "Basic box"] },
+      { "plan": "Classic", "price": "1499", "features": ["12cm figurine", "Enhanced detail", "Gift-ready packaging"] },
+      { "plan": "Signature", "price": "2499", "features": ["15cm figurine", "Premium finish", "Engraved base + luxury box"] }
     ]
   },
+  "previews": [
+    {
+      "title": "Elegant Professional",
+      "desc": "Balanced pose, premium colors, formal styling for milestone gifts.",
+      "img": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "Warm Family Style",
+      "desc": "Soft tones, smile-forward design, ideal for birthdays and parents.",
+      "img": "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "Creative Character",
+      "desc": "Expressive pose with hobby props for lively custom storytelling.",
+      "img": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "Classic Couple Edition",
+      "desc": "Minimal romantic sculpt style with name/date engraving options.",
+      "img": "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80"
+    }
+  ],
   "stories": [
-    { "tag": "Farewell", "title": "Chef Marco Tribute", "text": "A restaurant team created a custom piece with chef coat details and a plated signature dish base." },
-    { "tag": "Graduation", "title": "Dr. Ananya’s Milestone", "text": "Family gifted a stethoscope-themed figurine with a motivational engraved quote." },
-    { "tag": "Birthday", "title": "Athlete Rohan Edition", "text": "Friends selected an energetic action pose with team-color accents for his 25th birthday." },
-    { "tag": "Anniversary", "title": "First Dance Moment", "text": "A couple transformed their wedding dance photo into a sculptural keepsake." }
+    { "tag": "Farewell", "title": "Chef Marco Tribute", "text": "A culinary team converted years of gratitude into a desk-ready keepsake." },
+    { "tag": "Graduation", "title": "Dr. Ananya Celebration", "text": "A custom model with a stethoscope motif and family message engraving." },
+    { "tag": "Birthday", "title": "Rohan Sports Edition", "text": "Action-pose figurine styled with team colors and date marker." },
+    { "tag": "Anniversary", "title": "First Dance Keepsake", "text": "Wedding memory transformed into a timeless physical collectible." }
   ],
   "about": {
-    "mission": "Memorialize exists to make gifting deeply personal, visual, and unforgettable through AI-assisted design and premium on-demand 3D production.",
+    "mission": "Memorialize helps people celebrate relationships through custom visual storytelling and premium 3D crafted gifts.",
     "values": [
-      { "title": "Emotion First", "desc": "Every design starts with story and sentiment, not just surface-level aesthetics." },
-      { "title": "Craft + Speed", "desc": "Fast iteration using AI with careful human review before production." },
-      { "title": "Premium Experience", "desc": "From concept preview to unboxing, every touchpoint is built for delight." }
+      { "title": "Emotion First", "desc": "We start with human stories, then design around emotion and memory." },
+      { "title": "Craft + Technology", "desc": "AI for speed, human quality checks for final print excellence." },
+      { "title": "Premium Delivery", "desc": "A thoughtful unboxing journey from first click to final reveal." }
     ]
   }
 }
