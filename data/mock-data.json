@@ -1,0 +1,53 @@
+{
+  "brand": {
+    "name": "Memorialize",
+    "heroTitle": "Turn people, stories, and emotions into unforgettable 3D gifts.",
+    "heroSubtitle": "Create a profile, preview AI concepts, approve your favorite design, and get it printed + delivered with premium finishing."
+  },
+  "home": {
+    "howItWorks": [
+      { "step": 1, "title": "Create Gift Profile", "desc": "Add recipient name, occasion, personality, hobbies, style, and references." },
+      { "step": 2, "title": "AI Concept Generation", "desc": "Get multiple gift previews in different artistic and material styles." },
+      { "step": 3, "title": "Approve & Print", "desc": "Select one concept, finalize details, and we start production on demand." },
+      { "step": 4, "title": "Ship & Surprise", "desc": "Track your order and deliver a deeply personal gift experience." }
+    ],
+    "categories": [
+      { "type": "3D Figurines", "name": "People Portrait Models", "desc": "High-detail miniatures based on photos, vibe, and story context." },
+      { "type": "Corporate", "name": "Team Farewell Gifts", "desc": "Custom desk-ready pieces for promotions, exits, and milestone recognitions." },
+      { "type": "Relationship", "name": "Anniversary Keepsakes", "desc": "Romantic, playful, or elegant styles with engraved bases and message cards." },
+      { "type": "Family", "name": "Birthday & Parents Day", "desc": "Emotion-first designs with optional premium packaging and handwritten notes." },
+      { "type": "Pets", "name": "Pet Memorial Sculpts", "desc": "Sensitive, beautiful physical mementos to preserve loving memories." },
+      { "type": "Collections", "name": "Limited Edition Themes", "desc": "Festival and seasonal designs: Diwali, New Year, Wedding season, and more." }
+    ],
+    "testimonials": [
+      { "name": "Rhea Kapoor", "location": "Mumbai", "quote": "I cried when I saw the final print. It looked exactly like my dad in his favorite pose." },
+      { "name": "Sarthak Jain", "location": "Bengaluru", "quote": "The AI previews were so good we had a hard time picking just one." },
+      { "name": "Neha & Arjun", "location": "Delhi", "quote": "Best anniversary gift we’ve done. Packaging and finish felt luxury-level." }
+    ],
+    "faq": [
+      { "q": "How long does delivery take?", "a": "Most orders are delivered in 5–8 business days, depending on complexity and location." },
+      { "q": "Can I request edits after AI preview?", "a": "Yes. You can request refinements before approving the final print-ready design." },
+      { "q": "What materials are available?", "a": "PLA+, resin-style finish, matte paint options, and premium base engraving." },
+      { "q": "Is COD available?", "a": "You can support prepaid, partial advance, or COD policies based on your operations." }
+    ],
+    "pricing": [
+      { "plan": "Mini", "price": "999", "features": ["~8cm size", "Single color", "Standard box"] },
+      { "plan": "Classic", "price": "1499", "features": ["~12cm size", "Enhanced detailing", "Gift packaging"] },
+      { "plan": "Premium", "price": "2499", "features": ["~15cm size", "Painted finish", "Engraved base + premium box"] }
+    ]
+  },
+  "stories": [
+    { "tag": "Farewell", "title": "Chef Marco Tribute", "text": "A restaurant team created a custom piece with chef coat details and a plated signature dish base." },
+    { "tag": "Graduation", "title": "Dr. Ananya’s Milestone", "text": "Family gifted a stethoscope-themed figurine with a motivational engraved quote." },
+    { "tag": "Birthday", "title": "Athlete Rohan Edition", "text": "Friends selected an energetic action pose with team-color accents for his 25th birthday." },
+    { "tag": "Anniversary", "title": "First Dance Moment", "text": "A couple transformed their wedding dance photo into a sculptural keepsake." }
+  ],
+  "about": {
+    "mission": "Memorialize exists to make gifting deeply personal, visual, and unforgettable through AI-assisted design and premium on-demand 3D production.",
+    "values": [
+      { "title": "Emotion First", "desc": "Every design starts with story and sentiment, not just surface-level aesthetics." },
+      { "title": "Craft + Speed", "desc": "Fast iteration using AI with careful human review before production." },
+      { "title": "Premium Experience", "desc": "From concept preview to unboxing, every touchpoint is built for delight." }
+    ]
+  }
+}
