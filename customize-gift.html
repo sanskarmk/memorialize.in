@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Customize Gift — Memorialize</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/styles.css"></head>
-<body>
+<body data-page="customize">
 <header class="topbar"><div class="container nav"><a class="logo" href="index.html">MEMO<span>RIALIZE</span></a><nav class="links"><a href="ai-preview.html">AI Preview</a><a href="review-checkout.html">Review</a></nav></div></header>
 <main class="container section">
   <h1 class="grad">Step 3: Customize the final gift</h1>
   <div class="stepper"><span>1. Profile</span><span>2. AI Preview</span><span class="active">3. Customize</span><span>4. Review</span><span>5. Checkout</span></div>
-  <section class="card panel">
-    <form class="form">
-      <div class="field"><label>Size</label><select><option>Mini (8 cm) — ₹999</option><option selected>Classic (12 cm) — ₹1499</option><option>Signature (15 cm) — ₹2499</option></select></div>
-      <div class="field"><label>Material</label><select><option>PLA+</option><option>Resin Finish</option></select></div>
-      <div class="field"><label>Color Style</label><select><option>Natural</option><option>Pastel</option><option>Premium Metallic</option></select></div>
-      <div class="field"><label>Packaging</label><select><option>Standard</option><option>Gift Box</option><option>Luxury Box</option></select></div>
-      <div class="field full"><label>Engraving text</label><input placeholder="Forever in our hearts"></div>
-      <div class="field full"><label>Additional notes</label><textarea placeholder="Any edits before final approval?"></textarea></div>
-    </form>
-    <div style="margin-top:16px"><a class="btn" href="review-checkout.html">Proceed to Review</a></div>
+  <section class="grid-2">
+    <article class="card panel">
+      <div class="kicker">Selected 3D concept</div>
+      <img class="preview-image" id="selectedConceptImage" src="" alt="Selected 3D concept">
+      <h3 id="selectedConceptTitle"></h3>
+      <p class="sub" id="selectedConceptDesc"></p>
+    </article>
+    <article class="card panel">
+      <form class="form" id="customizeForm">
+        <div class="field"><label>Size</label><select id="size"></select></div>
+        <div class="field"><label>Material</label><select id="material"></select></div>
+        <div class="field"><label>Color Style</label><select id="colorStyle"></select></div>
+        <div class="field"><label>Packaging</label><select id="packaging"></select></div>
+        <div class="field full"><label>Engraving text</label><input id="engraving" placeholder="Forever in our hearts"></div>
+        <div class="field full"><label>Additional notes</label><textarea id="notes" placeholder="Any edits before final approval?"></textarea></div>
+        <div class="full" style="margin-top:8px"><button class="btn" type="submit">Proceed to Review</button></div>
+      </form>
+    </article>
   </section>
 </main>
+<script src="assets/js/main.js"></script>
 </body></html>
