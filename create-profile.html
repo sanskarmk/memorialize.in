@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Create Gift Profile — Memorialize</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/styles.css"></head>
-<body>
+<body data-page="create-profile">
 <header class="topbar"><div class="container nav"><a class="logo" href="index.html">MEMO<span>RIALIZE</span></a><nav class="links"><a href="index.html">Home</a><a href="ai-preview.html">AI Preview</a><a href="review-checkout.html">Checkout</a></nav></div></header>
 <main class="container section">
   <h1 class="grad">Step 1: Create Gift Profile</h1>
   <p class="sub">Tell us who the gift is for so AI can generate stronger visual concepts.</p>
   <section class="card panel">
     <div class="stepper"><span class="active">1. Profile</span><span>2. AI Preview</span><span>3. Customize</span><span>4. Review</span><span>5. Checkout</span></div>
-    <form class="form">
-      <div class="field"><label>Recipient Name</label><input placeholder="e.g., Dr. Priya Sharma"></div>
-      <div class="field"><label>Occasion</label><select><option>Birthday</option><option>Anniversary</option><option>Farewell</option><option>Graduation</option></select></div>
-      <div class="field"><label>Recipient Profession</label><input placeholder="Doctor, founder, athlete..."></div>
-      <div class="field"><label>Relationship</label><select><option>Friend</option><option>Partner</option><option>Parent</option><option>Colleague</option></select></div>
-      <div class="field full"><label>Hobbies & interests</label><input placeholder="Reading, music, travel, fitness"></div>
-      <div class="field full"><label>Reference photo URL (mock)</label><input placeholder="https://..."></div>
-      <div class="field full"><label>Story prompt</label><textarea placeholder="Describe personality, emotional context, style preferences."></textarea></div>
+    <p class="sub" id="profileHint"></p>
+    <form class="form" id="profileForm">
+      <div class="field"><label>Recipient Name</label><input id="recipient" placeholder="e.g., Dr. Priya Sharma"></div>
+      <div class="field"><label>Occasion</label><select id="occasion"></select></div>
+      <div class="field"><label>Recipient Profession</label><input id="profession" placeholder="Doctor, founder, athlete..."></div>
+      <div class="field"><label>Relationship</label><select id="relationship"></select></div>
+      <div class="field full"><label>Hobbies & interests</label><input id="hobbies" placeholder="Reading, music, travel, fitness"></div>
+      <div class="field full"><label>Reference photo URL (mock)</label><input id="referenceUrl" placeholder="https://..."></div>
+      <div class="field full"><label>Story prompt</label><textarea id="storyPrompt" placeholder="Describe personality, emotional context, style preferences."></textarea></div>
+      <div class="full" style="margin-top:8px"><button class="btn" type="submit">Generate AI Concepts</button></div>
     </form>
-    <div style="margin-top:16px"><a class="btn" href="ai-preview.html">Generate AI Concepts</a></div>
   </section>
 </main>
+<script src="assets/js/main.js"></script>
 </body></html>

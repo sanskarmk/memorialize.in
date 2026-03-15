@@ -5,7 +5,7 @@
     "heroSubtitle": "One-stop experience: create profile → generate concepts → approve final design → print and deliver."
   },
   "home": {
-    "heroImage": "https://images.unsplash.com/photo-1553531889-56cc480ac5cb?auto=format&fit=crop&w=1400&q=80",
+    "heroImage": "https://images.pexels.com/photos/19124461/pexels-photo-19124461.jpeg?auto=compress&cs=tinysrgb&w=1400",
     "howItWorks": [
       { "step": 1, "title": "Create Gift Profile", "desc": "Add recipient details, occasion, personality, hobbies, and references." },
       { "step": 2, "title": "Generate AI Concepts", "desc": "View multiple visual directions that simulate final product outcomes." },
@@ -40,23 +40,23 @@
   "previews": [
     {
       "title": "Elegant Professional",
-      "desc": "Balanced pose, premium colors, formal styling for milestone gifts.",
-      "img": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80"
+      "desc": "Studio-lit desk figurine style with hand-painted details and premium finish.",
+      "img": "https://images.pexels.com/photos/19125123/pexels-photo-19125123.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
       "title": "Warm Family Style",
-      "desc": "Soft tones, smile-forward design, ideal for birthdays and parents.",
-      "img": "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80"
+      "desc": "Soft expression, natural palette, and sentimental base engraving layout.",
+      "img": "https://images.pexels.com/photos/19124461/pexels-photo-19124461.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
       "title": "Creative Character",
-      "desc": "Expressive pose with hobby props for lively custom storytelling.",
-      "img": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80"
+      "desc": "Fun hobby-forward pose inspired by custom FDM and resin 3D printed minis.",
+      "img": "https://images.pexels.com/photos/3846554/pexels-photo-3846554.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
       "title": "Classic Couple Edition",
-      "desc": "Minimal romantic sculpt style with name/date engraving options.",
-      "img": "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80"
+      "desc": "Dual figurine concept with synchronized outfits and anniversary plinth text.",
+      "img": "https://images.pexels.com/photos/7203788/pexels-photo-7203788.jpeg?auto=compress&cs=tinysrgb&w=1200"
     }
   ],
   "stories": [
@@ -72,5 +72,54 @@
       { "title": "Craft + Technology", "desc": "AI for speed, human quality checks for final print excellence." },
       { "title": "Premium Delivery", "desc": "A thoughtful unboxing journey from first click to final reveal." }
     ]
+  },
+  "flow": {
+    "profile": {
+      "defaults": {
+        "recipient": "Dr. Priya Sharma",
+        "occasion": "Birthday",
+        "profession": "Cardiologist",
+        "relationship": "Friend",
+        "hobbies": "Classical music, travel, reading",
+        "referenceUrl": "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg",
+        "storyPrompt": "A warm smile, stethoscope prop, and elegant pastel outfit for a milestone birthday gift."
+      },
+      "occasionOptions": ["Birthday", "Anniversary", "Farewell", "Graduation"],
+      "relationshipOptions": ["Friend", "Partner", "Parent", "Colleague"]
+    },
+    "customization": {
+      "selectedConcept": "Elegant Professional",
+      "sizeOptions": [
+        { "label": "Mini (8 cm)", "price": 999 },
+        { "label": "Classic (12 cm)", "price": 1499 },
+        { "label": "Signature (15 cm)", "price": 2499 }
+      ],
+      "materialOptions": ["PLA+", "Resin Finish"],
+      "colorOptions": ["Natural", "Pastel", "Premium Metallic"],
+      "packagingOptions": ["Standard", "Gift Box", "Luxury Box"],
+      "engraving": "Forever in our hearts",
+      "notes": "Slight smile enhancement and stethoscope detail on the coat.",
+      "addons": [
+        { "label": "Name engraving", "price": 99 },
+        { "label": "Gift-ready packaging", "price": 0 }
+      ]
+    },
+    "checkout": {
+      "address": "B-402, Magnolia Residency, Golf Course Road, Gurugram, 122002",
+      "phone": "+91 98765 43210",
+      "paymentOptions": ["UPI", "Card", "COD"],
+      "selectedPayment": "UPI"
+    },
+    "tracking": {
+      "orderId": "MEM-2026-0142",
+      "customer": "Rhea Kapoor",
+      "events": [
+        { "title": "Profile Submitted", "time": "Mar 15, 11:06 AM", "status": "done" },
+        { "title": "Concept Approved", "time": "Mar 15, 12:28 PM", "status": "done" },
+        { "title": "Printing in Progress", "time": "Expected: Mar 17", "status": "current" },
+        { "title": "Quality Check", "time": "Pending", "status": "pending" },
+        { "title": "Shipped", "time": "Pending", "status": "pending" }
+      ]
+    }
   }
 }

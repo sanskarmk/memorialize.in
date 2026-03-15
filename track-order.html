@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Track Order — Memorialize</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/styles.css"></head>
-<body>
+<body data-page="track-order">
 <header class="topbar"><div class="container nav"><a class="logo" href="index.html">MEMO<span>RIALIZE</span></a><nav class="links"><a href="index.html">Home</a><a href="review-checkout.html">Checkout</a></nav></div></header>
 <main class="container section">
   <h1 class="grad">Order Tracking</h1>
-  <p class="sub">Order ID: MEM-2026-0142 • Customer: Rhea Kapoor</p>
-  <section class="card panel timeline">
-    <div class="track-step done"><b>Profile Submitted</b><div>Mar 15, 11:06 AM</div></div>
-    <div class="track-step done"><b>Concept Approved</b><div>Mar 15, 12:28 PM</div></div>
-    <div class="track-step current"><b>Printing in Progress</b><div>Expected: Mar 17</div></div>
-    <div class="track-step"><b>Quality Check</b><div>Pending</div></div>
-    <div class="track-step"><b>Shipped</b><div>Pending</div></div>
-  </section>
+  <p class="sub" id="orderMeta"></p>
+  <section class="card panel timeline" id="trackingTimeline"></section>
 </main>
-<footer class="footer"><div class="container">Mock tracker UI. Attach this to your production order-status API.</div></footer>
+<footer class="footer"><div class="container">Live-like tracker UI backed by mock-data.json until backend integration is ready.</div></footer>
+<script src="assets/js/main.js"></script>
 </body></html>
