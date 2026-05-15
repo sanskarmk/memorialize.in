@@ -1,16 +1,46 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>About — Memorialize</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/styles.css"></head>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>About Sanskar — Memorialize</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/styles.css"></head>
 <body data-page="about">
-<header class="topbar"><div class="container nav"><a class="logo" href="index.html">MEMO<span>RIALIZE</span></a><nav class="links"><a href="index.html">Home</a><a href="stories.html">Stories</a></nav></div></header>
-<main class="container section">
-  <span class="badge">About Memorialize</span>
-  <h1 class="grad">A premium gifting journey built around emotion.</h1>
-  <p class="lead" id="aboutMission"></p>
+<header class="topbar"><div class="container nav"><a class="logo" href="index.html">MEMO<span>RIALIZE</span></a><nav class="links"><a href="index.html">Home</a><a href="stories.html">Stories</a><a href="create-profile.html">Create Gift</a></nav><div class="nav-actions"><span id="authBadge"></span><a class="btn secondary" href="login.html">Login</a></div></div></header>
+<main class="container">
+  <section class="section owner-strip">
+    <div class="owner-mark"><span>S</span></div>
+    <article class="card panel">
+      <span class="badge">About the owner</span>
+      <h1 class="grad"><span id="ownerName"></span>, the person behind Memorialize.</h1>
+      <div class="kicker" id="ownerRole"></div>
+      <p class="quote" id="ownerQuote"></p>
+      <p class="lead" id="ownerBio"></p>
+      <div class="pill-list" id="ownerPassions"></div>
+    </article>
+  </section>
+  <section class="section">
+    <h2>Why Memorialize exists</h2>
+    <p class="lead" id="aboutMission"></p>
+  </section>
+  <section class="section">
+    <h2>Brand values</h2>
+    <div class="grid-3" id="aboutValues"></div>
+  </section>
+  <section class="section grid-2">
+    <article class="card panel">
+      <h2>Contact the studio</h2>
+      <p class="sub">A professional enquiry form ready for a future backend.</p>
+      <form class="form" id="contactForm">
+        <div class="field"><label>Name</label><input required placeholder="Your name"></div>
+        <div class="field"><label>Email</label><input type="email" required placeholder="you@example.com"></div>
+        <div class="field full"><label>Reason</label><select id="contactReason"></select></div>
+        <div class="field full"><label>Message</label><textarea required placeholder="Tell Sanskar about the gift, story, timeline, or bulk order."></textarea></div>
+        <div class="full"><button class="btn" type="submit">Send Mock Enquiry</button></div>
+      </form>
+    </article>
+    <article class="card panel">
+      <div class="kicker">Studio promise</div>
+      <h2>Personal, premium, never template-like.</h2>
+      <p class="lead">Every mock form on this site is structured to become a real production workflow later: enquiry, login, profile, concept selection, customization, checkout, and tracking.</p>
+    </article>
+  </section>
 </main>
-<section class="container section">
-  <h2>Our values</h2>
-  <div class="grid-3" id="aboutValues"></div>
-</section>
-<footer class="footer"><div class="container">From first input to final unboxing — every step is crafted for delight.</div></footer>
+<footer class="footer"><div class="container footer-grid"><p>From first input to final unboxing — every step is crafted for delight.</p><a class="btn secondary" href="create-profile.html">Start a Gift</a></div></footer>
 <script src="assets/js/main.js"></script>
 </body></html>

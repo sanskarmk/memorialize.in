@@ -1,0 +1,9 @@
+{
+  "login": {
+    "email": "sanskar@memorialize.in",
+    "password": "passion123",
+    "name": "Sanskar"
+  },
+  "contactReasons": ["Custom gift enquiry", "Bulk corporate order", "Revision request", "Partnership", "Press"],
+  "newsletterTopics": ["New gift drops", "Behind the craft", "Founder notes", "Festive offers"]
+}

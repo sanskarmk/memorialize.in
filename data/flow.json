@@ -1,0 +1,56 @@
+{
+  "profile": {
+    "defaults": {
+      "recipient": "Dr. Priya Sharma",
+      "occasion": "Birthday",
+      "profession": "Cardiologist",
+      "relationship": "Friend",
+      "hobbies": "Classical music, travel, reading",
+      "referenceUrl": "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg",
+      "storyPrompt": "A warm smile, stethoscope prop, elegant pastel outfit, and a tiny travel postcard on the base."
+    },
+    "occasionOptions": ["Birthday", "Anniversary", "Farewell", "Graduation", "Wedding", "Pet memorial", "Corporate appreciation"],
+    "relationshipOptions": ["Friend", "Partner", "Parent", "Sibling", "Colleague", "Mentor", "Client"]
+  },
+  "previews": [
+    { "title": "Elegant Professional", "desc": "Studio-lit desk figurine style with refined posture, career prop, and premium painted finish.", "img": "https://images.pexels.com/photos/19125123/pexels-photo-19125123.jpeg?auto=compress&cs=tinysrgb&w=1200" },
+    { "title": "Warm Family Style", "desc": "Soft expression, natural palette, sentimental base engraving, and cozy display styling.", "img": "https://images.pexels.com/photos/19124461/pexels-photo-19124461.jpeg?auto=compress&cs=tinysrgb&w=1200" },
+    { "title": "Creative Character", "desc": "Hobby-forward pose with playful accessories, expressive styling, and collectible energy.", "img": "https://images.pexels.com/photos/3846554/pexels-photo-3846554.jpeg?auto=compress&cs=tinysrgb&w=1200" },
+    { "title": "Classic Couple Edition", "desc": "Dual figurine direction with coordinated outfits, anniversary plinth, and timeless display language.", "img": "https://images.pexels.com/photos/7203788/pexels-photo-7203788.jpeg?auto=compress&cs=tinysrgb&w=1200" }
+  ],
+  "customization": {
+    "selectedConcept": "Elegant Professional",
+    "sizeOptions": [
+      { "label": "Mini (8 cm)", "price": 999 },
+      { "label": "Classic (12 cm)", "price": 1499 },
+      { "label": "Signature (15 cm)", "price": 2499 }
+    ],
+    "materialOptions": ["PLA+ matte", "Resin finish", "Premium metallic accent"],
+    "colorOptions": ["Natural", "Pastel", "Premium Metallic", "Monochrome Luxury"],
+    "packagingOptions": ["Standard sleeve", "Gift box", "Luxury magnetic box"],
+    "engraving": "Forever in our hearts",
+    "notes": "Slight smile enhancement and stethoscope detail on the coat.",
+    "addons": [
+      { "label": "Name engraving", "price": 99 },
+      { "label": "Gift-ready packaging", "price": 0 }
+    ]
+  },
+  "checkout": {
+    "address": "B-402, Magnolia Residency, Golf Course Road, Gurugram, 122002",
+    "phone": "+91 98765 43210",
+    "email": "rhea@example.com",
+    "paymentOptions": ["UPI", "Card", "COD", "Bank transfer"],
+    "selectedPayment": "UPI"
+  },
+  "tracking": {
+    "orderId": "MEM-2026-0142",
+    "customer": "Rhea Kapoor",
+    "events": [
+      { "title": "Profile submitted", "time": "May 15, 11:06 AM", "status": "done" },
+      { "title": "Concept approved", "time": "May 15, 12:28 PM", "status": "done" },
+      { "title": "Crafting in progress", "time": "Expected: May 17", "status": "current" },
+      { "title": "Quality check", "time": "Pending", "status": "pending" },
+      { "title": "Packed and shipped", "time": "Pending", "status": "pending" }
+    ]
+  }
+}

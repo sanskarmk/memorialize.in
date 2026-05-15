@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Memorialize — One-stop Custom Gifting</title>
+  <title>Memorialize — Personalized Premium Keepsakes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body data-page="home">
@@ -14,74 +14,76 @@
     <div class="container nav">
       <a class="logo" href="index.html">MEMO<span>RIALIZE</span></a>
       <nav class="links">
-        <a href="#how">How it works</a>
+        <a href="#how">Process</a>
         <a href="#categories">Categories</a>
         <a href="#pricing">Pricing</a>
-        <a href="create-profile.html">Create Gift</a>
         <a href="stories.html">Stories</a>
-        <a href="about.html">About</a>
+        <a href="about.html">About Sanskar</a>
       </nav>
-      <a class="btn" href="create-profile.html">Start Now</a>
+      <div class="nav-actions"><span id="authBadge"></span><a class="btn secondary" href="login.html">Login</a><a class="btn" href="create-profile.html">Start Gift</a></div>
     </div>
   </header>
 
   <main class="container">
     <section class="hero">
       <div>
-        <span class="badge">AI Concepting + 3D Print Crafting</span>
+        <span class="badge">Boutique 3D gifting studio</span>
         <h1 class="grad" id="heroTitle"></h1>
         <p class="lead" id="heroSubtitle"></p>
         <div class="hero-actions">
           <a class="btn" href="create-profile.html">Create Gift Profile</a>
-          <a class="btn secondary" href="track-order.html">Track Order</a>
+          <a class="btn secondary" href="ai-preview.html">View AI Concepts</a>
         </div>
-        <div class="metrics">
-          <article class="metric"><b>4K+</b><span>Delivered gifts</span></article>
-          <article class="metric"><b>98%</b><span>Satisfaction</span></article>
-          <article class="metric"><b>5-8 Days</b><span>Dispatch window</span></article>
-        </div>
+        <div class="metrics" id="metrics"></div>
       </div>
-      <aside class="card panel">
-        <div class="kicker">Sample AI Moodboard</div>
+      <aside class="card panel art-card">
+        <div class="kicker">Signature preview</div>
         <img class="preview-image" id="heroImage" src="" alt="Gift visual style" />
-        <p class="lead">The new UI is intentionally visual-first so users instantly understand what kind of output they can expect before placing an order.</p>
+        <p class="lead">A warm, premium storefront for story-led keepsakes—designed to feel like a founder-owned brand, not a college project.</p>
       </aside>
     </section>
 
+    <section class="section owner-strip">
+      <div class="owner-mark"><span>S</span></div>
+      <article class="card panel">
+        <div class="kicker">Founder note</div>
+        <h2>Built personally by Sanskar.</h2>
+        <p class="quote" id="ownerQuote"></p>
+        <p class="lead" id="ownerBio"></p>
+        <div class="card-actions"><a class="btn secondary" href="about.html">Read About Sanskar</a></div>
+      </article>
+    </section>
+
     <section id="how" class="section">
-      <h2>How it works</h2>
-      <p class="sub">Simple journey from profile input to doorstep delivery.</p>
+      <div class="section-heading"><div><h2>From story to shelf.</h2><p class="sub">A professional flow that guides customers from idea to checkout without feeling generic.</p></div></div>
       <div class="grid-2" id="howSteps"></div>
     </section>
 
     <section id="categories" class="section">
-      <h2>Gift categories</h2>
-      <p class="sub">Designed for personal, family, and corporate moments.</p>
-      <div class="grid-3" id="categoriesGrid"></div>
+      <div class="section-heading"><div><h2>Gift categories</h2><p class="sub">Personal, emotional, and corporate gifting formats powered by JSON mock data.</p></div></div>
+      <div class="grid-2" id="categoriesGrid"></div>
     </section>
 
     <section id="pricing" class="section">
-      <h2>Pricing</h2>
-      <p class="sub">Starter plans with room for premium upsells.</p>
+      <div class="section-heading"><div><h2>Clear premium pricing</h2><p class="sub">Mock packages with simple positioning for future payment integration.</p></div></div>
       <div class="grid-3" id="pricing"></div>
     </section>
 
     <section class="section">
-      <h2>Testimonials</h2>
-      <p class="sub">Mock social proof cards for now.</p>
+      <div class="section-heading"><div><h2>Customer reactions</h2><p class="sub">Mock testimonials that create social proof for the brand experience.</p></div></div>
       <div class="grid-3" id="testimonialsGrid"></div>
     </section>
 
     <section class="section">
-      <h2>FAQs</h2>
+      <h2>Questions before ordering</h2>
       <div id="faq" class="faq"></div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px">
-      <p>© 2026 Memorialize. Custom gifting studio.</p>
-      <p><a href="create-profile.html">Create Gift</a> · <a href="ai-preview.html">AI Preview</a> · <a href="track-order.html">Track</a></p>
+    <div class="container footer-grid">
+      <p>© 2026 Memorialize. Passion-led personalized gifting by Sanskar.</p>
+      <form class="newsletter" id="newsletterForm"><input type="email" placeholder="Email for founder notes" required><button class="btn secondary" type="submit">Subscribe</button></form>
     </div>
   </footer>
 

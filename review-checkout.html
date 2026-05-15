@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Review & Checkout — Memorialize</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/styles.css"></head>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Review & Checkout — Memorialize</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/styles.css"></head>
 <body data-page="review-checkout">
-<header class="topbar"><div class="container nav"><a class="logo" href="index.html">MEMO<span>RIALIZE</span></a><nav class="links"><a href="customize-gift.html">Customize</a><a href="track-order.html">Track</a></nav></div></header>
+<header class="topbar"><div class="container nav"><a class="logo" href="index.html">MEMO<span>RIALIZE</span></a><nav class="links"><a href="customize-gift.html">Customize</a><a href="track-order.html">Track</a><a href="about.html">About</a></nav><div class="nav-actions"><span id="authBadge"></span><a class="btn secondary" href="login.html">Login</a></div></div></header>
 <main class="container section">
-  <h1 class="grad">Step 4 & 5: Review and Checkout</h1>
+  <span class="badge">Steps 4 & 5</span>
+  <h1 class="grad">Review, checkout, and place a mock order.</h1>
   <div class="stepper"><span>1. Profile</span><span>2. AI Preview</span><span>3. Customize</span><span class="active">4. Review</span><span class="active">5. Checkout</span></div>
   <section class="grid-2">
     <article class="card panel">
-      <h2>Order Summary</h2>
+      <h2>Order summary</h2>
       <ul class="clean" style="margin-top:10px" id="orderSummary"></ul>
       <div class="price" id="orderTotal"></div>
     </article>
     <article class="card panel">
-      <h2>Shipping + Payment</h2>
+      <h2>Shipping + payment</h2>
+      <p class="sub">A complete checkout form ready for future payment and order APIs.</p>
       <form class="form" id="checkoutForm">
-        <div class="field full"><label>Full Address</label><textarea id="address" placeholder="House no, street, city, pincode"></textarea></div>
-        <div class="field"><label>Phone</label><input id="phone" placeholder="+91 ..."></div>
-        <div class="field"><label>Payment Mode</label><select id="paymentMode"></select></div>
-        <div class="full" style="margin-top:8px"><button class="btn" type="submit">Place Order (Mock)</button></div>
+        <div class="field full"><label>Full Address</label><textarea id="address" required placeholder="House no, street, city, pincode"></textarea></div>
+        <div class="field"><label>Phone</label><input id="phone" required placeholder="+91 ..."></div>
+        <div class="field"><label>Email</label><input id="email" type="email" required placeholder="you@example.com"></div>
+        <div class="field full"><label>Payment Mode</label><select id="paymentMode"></select></div>
+        <div class="full"><button class="btn" type="submit">Place Order (Mock)</button></div>
       </form>
     </article>
   </section>

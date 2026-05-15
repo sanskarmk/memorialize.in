@@ -1,14 +1,41 @@
-const dataUrl = './data/mock-data.json';
+const dataFiles = {
+  brand: './data/brand.json',
+  home: './data/home.json',
+  flow: './data/flow.json',
+  stories: './data/stories.json',
+  forms: './data/forms.json'
+};
 const flowStorageKey = 'memorialize-flow-state';
+const sessionStorageKey = 'memorialize-session';
 
 let cachedData;
 
+async function fetchJson(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Failed to load ${url}`);
+  return res.json();
+}
+
 async function loadData() {
   if (cachedData) return cachedData;
-  const res = await fetch(dataUrl);
-  if (!res.ok) throw new Error('Failed to load data');
-  cachedData = await res.json();
+  const [brand, home, flow, stories, forms] = await Promise.all([
+    fetchJson(dataFiles.brand),
+    fetchJson(dataFiles.home),
+    fetchJson(dataFiles.flow),
+    fetchJson(dataFiles.stories),
+    fetchJson(dataFiles.forms)
+  ]);
+  cachedData = { ...brand, home, flow, ...stories, forms };
   return cachedData;
+}
+
+function escapeHtml(value = '') {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
 }
 
 function setText(id, text) {
@@ -37,7 +64,7 @@ function populateSelect(id, options, selectedValue) {
     .map((option) => {
       const value = typeof option === 'string' ? option : option.label;
       const selected = value === selectedValue ? 'selected' : '';
-      return `<option ${selected}>${value}</option>`;
+      return `<option ${selected}>${escapeHtml(value)}</option>`;
     })
     .join('');
 }
@@ -61,132 +88,161 @@ function saveFlowState(state) {
   localStorage.setItem(flowStorageKey, JSON.stringify(state));
 }
 
+function showToast(message) {
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  window.setTimeout(() => toast.remove(), 3000);
+}
+
+function bindNewsletterForm() {
+  const form = document.getElementById('newsletterForm');
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.reset();
+    showToast('Subscribed in mock mode. No backend call was made.');
+  });
+}
+
+function hydrateBrandChrome(data) {
+  setText('brandTagline', data.brand.tagline);
+  const session = JSON.parse(localStorage.getItem(sessionStorageKey) || 'null');
+  const authBadge = document.getElementById('authBadge');
+  if (authBadge && session?.name) authBadge.textContent = `Signed in as ${session.name}`;
+}
+
 async function initHome() {
   const data = await loadData();
+  hydrateBrandChrome(data);
   setText('heroTitle', data.brand.heroTitle);
   setText('heroSubtitle', data.brand.heroSubtitle);
-  setImage('heroImage', data.home.heroImage, '3D printed gift reference');
+  setImage('heroImage', data.brand.heroImage, 'Premium personalized 3D keepsake reference');
+  setText('ownerQuote', data.brand.owner.quote);
+  setText('ownerBio', data.brand.owner.shortBio);
 
-  renderList(
-    'howSteps',
-    data.home.howItWorks,
-    (s) => `
-    <article class="item">
-      <div class="kicker">Step ${s.step}</div>
-      <h3>${s.title}</h3>
-      <p>${s.desc}</p>
+  renderList('metrics', data.brand.stats, (s) => `
+    <article class="metric"><b>${escapeHtml(s.value)}</b><span>${escapeHtml(s.label)}</span></article>
+  `);
+
+  renderList('howSteps', data.home.howItWorks, (s) => `
+    <article class="item elevated">
+      <div class="kicker">Step ${escapeHtml(s.step)}</div>
+      <h3>${escapeHtml(s.title)}</h3>
+      <p>${escapeHtml(s.desc)}</p>
     </article>
-  `
-  );
+  `);
 
-  renderList(
-    'categoriesGrid',
-    data.home.categories,
-    (c) => `
-    <article class="item">
-      <div class="kicker">${c.type}</div>
-      <h3>${c.name}</h3>
-      <p>${c.desc}</p>
+  renderList('categoriesGrid', data.home.categories, (c) => `
+    <article class="item feature-card">
+      <div class="kicker">${escapeHtml(c.type)}</div>
+      <h3>${escapeHtml(c.name)}</h3>
+      <p>${escapeHtml(c.desc)}</p>
     </article>
-  `
-  );
+  `);
 
-  renderList(
-    'pricing',
-    data.home.pricing,
-    (p) => `
-    <article class="item">
-      <div class="kicker">${p.plan}</div>
-      <div class="price">₹${p.price}</div>
-      <ul class="clean">${p.features.map((x) => `<li>• ${x}</li>`).join('')}</ul>
+  renderList('pricing', data.home.pricing, (p) => `
+    <article class="item price-card">
+      <div class="kicker">${escapeHtml(p.tag)}</div>
+      <h3>${escapeHtml(p.plan)}</h3>
+      <div class="price">₹${escapeHtml(p.price)}</div>
+      <ul class="clean">${p.features.map((x) => `<li>${escapeHtml(x)}</li>`).join('')}</ul>
     </article>
-  `
-  );
+  `);
 
-  renderList(
-    'testimonialsGrid',
-    data.home.testimonials,
-    (t) => `
-    <article class="item">
-      <div class="kicker">${t.location}</div>
-      <h3>${t.name}</h3>
-      <p>“${t.quote}”</p>
+  renderList('testimonialsGrid', data.home.testimonials, (t) => `
+    <article class="item testimonial">
+      <p>“${escapeHtml(t.quote)}”</p>
+      <h3>${escapeHtml(t.name)}</h3>
+      <div class="kicker">${escapeHtml(t.location)}</div>
     </article>
-  `
-  );
+  `);
 
-  renderList(
-    'faq',
-    data.home.faq,
-    (f) => `
+  renderList('faq', data.home.faq, (f) => `
     <details>
-      <summary>${f.q}</summary>
-      <p>${f.a}</p>
+      <summary>${escapeHtml(f.q)}</summary>
+      <p>${escapeHtml(f.a)}</p>
     </details>
-  `
-  );
+  `);
+  bindNewsletterForm();
 }
 
 async function initAbout() {
   const data = await loadData();
+  hydrateBrandChrome(data);
   setText('aboutMission', data.about.mission);
-  renderList(
-    'aboutValues',
-    data.about.values,
-    (v) => `
-    <article class="item">
-      <h3>${v.title}</h3>
-      <p>${v.desc}</p>
+  setText('ownerName', data.brand.owner.name);
+  setText('ownerRole', data.brand.owner.role);
+  setText('ownerBio', data.brand.owner.shortBio);
+  setText('ownerQuote', data.brand.owner.quote);
+  renderList('ownerPassions', data.brand.owner.passions, (passion) => `<span>${escapeHtml(passion)}</span>`);
+  renderList('aboutValues', data.about.values, (v) => `
+    <article class="item elevated">
+      <h3>${escapeHtml(v.title)}</h3>
+      <p>${escapeHtml(v.desc)}</p>
     </article>
-  `
-  );
+  `);
+  populateSelect('contactReason', data.forms.contactReasons, data.forms.contactReasons[0]);
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      contactForm.reset();
+      showToast('Message captured in mock mode. Sanskar would reply from here in production.');
+    });
+  }
 }
 
 async function initStories() {
   const data = await loadData();
-  renderList(
-    'storiesGrid',
-    data.stories,
-    (s) => `
-    <article class="item">
-      <div class="kicker">${s.tag}</div>
-      <h3>${s.title}</h3>
-      <p>${s.text}</p>
+  hydrateBrandChrome(data);
+  renderList('storiesGrid', data.stories, (s) => `
+    <article class="item story-card">
+      <div class="kicker">${escapeHtml(s.tag)}</div>
+      <h3>${escapeHtml(s.title)}</h3>
+      <p>${escapeHtml(s.text)}</p>
     </article>
-  `
-  );
+  `);
 }
 
 async function initAIPreview() {
   const data = await loadData();
-  renderList(
-    'previewCards',
-    data.previews,
-    (p, i) => `
-    <article class="item">
-      <img class="preview-image" src="${p.img}" alt="3D printed concept preview ${i + 1}">
+  hydrateBrandChrome(data);
+  renderList('previewCards', data.flow.previews, (p, i) => `
+    <article class="item preview-card">
+      <img class="preview-image" src="${escapeHtml(p.img)}" alt="3D printed concept preview ${i + 1}">
       <div class="kicker">Concept ${String.fromCharCode(65 + i)}</div>
-      <h3>${p.title}</h3>
-      <p>${p.desc}</p>
-      <div style="margin-top:10px"><a class="btn secondary" href="customize-gift.html">Select Concept</a></div>
+      <h3>${escapeHtml(p.title)}</h3>
+      <p>${escapeHtml(p.desc)}</p>
+      <div class="card-actions"><a class="btn secondary select-concept" data-title="${escapeHtml(p.title)}" href="customize-gift.html">Select Concept</a></div>
     </article>
-  `
-  );
+  `);
+  document.querySelectorAll('.select-concept').forEach((link) => {
+    link.addEventListener('click', () => {
+      const defaults = createDefaults(data);
+      const state = readFlowState(defaults);
+      saveFlowState({ ...state, customization: { ...state.customization, selectedConcept: link.dataset.title } });
+    });
+  });
 }
 
-async function initCreateProfile() {
-  const data = await loadData();
-  const defaults = {
+function createDefaults(data) {
+  return {
     profile: data.flow.profile.defaults,
     customization: data.flow.customization,
     checkout: data.flow.checkout
   };
-  const state = readFlowState(defaults);
+}
+
+async function initCreateProfile() {
+  const data = await loadData();
+  hydrateBrandChrome(data);
+  const state = readFlowState(createDefaults(data));
 
   populateSelect('occasion', data.flow.profile.occasionOptions, state.profile.occasion);
   populateSelect('relationship', data.flow.profile.relationshipOptions, state.profile.relationship);
-
-  setText('profileHint', `${data.brand.name} mock flow uses local data only (no backend calls).`);
+  setText('profileHint', 'All fields are powered by local JSON and saved to localStorage for this mock flow.');
 
   ['recipient', 'profession', 'hobbies', 'referenceUrl', 'storyPrompt'].forEach((field) => {
     const input = document.getElementById(field);
@@ -195,10 +251,9 @@ async function initCreateProfile() {
 
   const form = document.getElementById('profileForm');
   if (!form) return;
-
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const nextState = {
+    saveFlowState({
       ...state,
       profile: {
         recipient: document.getElementById('recipient').value,
@@ -209,8 +264,7 @@ async function initCreateProfile() {
         referenceUrl: document.getElementById('referenceUrl').value,
         storyPrompt: document.getElementById('storyPrompt').value
       }
-    };
-    saveFlowState(nextState);
+    });
     window.location.href = 'ai-preview.html';
   });
 }
@@ -221,12 +275,8 @@ function getPreviewByTitle(previews, title) {
 
 async function initCustomize() {
   const data = await loadData();
-  const defaults = {
-    profile: data.flow.profile.defaults,
-    customization: data.flow.customization,
-    checkout: data.flow.checkout
-  };
-  const state = readFlowState(defaults);
+  hydrateBrandChrome(data);
+  const state = readFlowState(createDefaults(data));
 
   populateSelect('size', data.flow.customization.sizeOptions, state.customization.size || data.flow.customization.sizeOptions[1].label);
   populateSelect('material', data.flow.customization.materialOptions, state.customization.material || data.flow.customization.materialOptions[0]);
@@ -236,18 +286,16 @@ async function initCustomize() {
   document.getElementById('engraving').value = state.customization.engraving || '';
   document.getElementById('notes').value = state.customization.notes || '';
 
-  const concept = getPreviewByTitle(data.previews, state.customization.selectedConcept);
+  const concept = getPreviewByTitle(data.flow.previews, state.customization.selectedConcept);
   setImage('selectedConceptImage', concept.img, `Selected concept ${concept.title}`);
   setText('selectedConceptTitle', concept.title);
   setText('selectedConceptDesc', concept.desc);
 
   const form = document.getElementById('customizeForm');
   if (!form) return;
-
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-
-    const nextState = {
+    saveFlowState({
       ...state,
       customization: {
         ...state.customization,
@@ -258,9 +306,7 @@ async function initCustomize() {
         engraving: document.getElementById('engraving').value,
         notes: document.getElementById('notes').value
       }
-    };
-
-    saveFlowState(nextState);
+    });
     window.location.href = 'review-checkout.html';
   });
 }
@@ -273,67 +319,75 @@ function calculateTotal(customization) {
 
 async function initReviewCheckout() {
   const data = await loadData();
-  const defaults = {
-    profile: data.flow.profile.defaults,
-    customization: data.flow.customization,
-    checkout: data.flow.checkout
-  };
-  const state = readFlowState(defaults);
-
+  hydrateBrandChrome(data);
+  const state = readFlowState(createDefaults(data));
   const mergedCustomization = { ...data.flow.customization, ...state.customization };
   const total = calculateTotal(mergedCustomization);
 
-  renderList(
-    'orderSummary',
-    [
-      `Recipient: ${state.profile.recipient}`,
-      `Occasion: ${state.profile.occasion}`,
-      `Concept: ${mergedCustomization.selectedConcept}`,
-      `Size: ${mergedCustomization.size || mergedCustomization.sizeOptions[1].label}`,
-      `Finish: ${mergedCustomization.material || 'PLA+'} + ${mergedCustomization.colorStyle || 'Pastel'}`,
-      `Packaging: ${mergedCustomization.packaging || 'Gift Box'}`,
-      `Engraving: ${mergedCustomization.engraving || '-'}`
-    ],
-    (item) => `<li>• ${item}</li>`
-  );
+  renderList('orderSummary', [
+    `Recipient: ${state.profile.recipient}`,
+    `Occasion: ${state.profile.occasion}`,
+    `Concept: ${mergedCustomization.selectedConcept}`,
+    `Size: ${mergedCustomization.size || mergedCustomization.sizeOptions[1].label}`,
+    `Finish: ${mergedCustomization.material || 'PLA+ matte'} + ${mergedCustomization.colorStyle || 'Pastel'}`,
+    `Packaging: ${mergedCustomization.packaging || 'Gift box'}`,
+    `Engraving: ${mergedCustomization.engraving || '-'}`
+  ], (item) => `<li>${escapeHtml(item)}</li>`);
 
   setText('orderTotal', `Total: ₹${total}`);
-
   populateSelect('paymentMode', data.flow.checkout.paymentOptions, state.checkout.selectedPayment || data.flow.checkout.selectedPayment);
   document.getElementById('address').value = state.checkout.address || '';
   document.getElementById('phone').value = state.checkout.phone || '';
+  document.getElementById('email').value = state.checkout.email || '';
 
   const form = document.getElementById('checkoutForm');
   if (!form) return;
-
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const nextState = {
+    saveFlowState({
       ...state,
       checkout: {
         address: document.getElementById('address').value,
         phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
         selectedPayment: document.getElementById('paymentMode').value
       }
-    };
-    saveFlowState(nextState);
+    });
     window.location.href = 'track-order.html';
   });
 }
 
 async function initTrackOrder() {
   const data = await loadData();
+  hydrateBrandChrome(data);
   setText('orderMeta', `Order ID: ${data.flow.tracking.orderId} • Customer: ${data.flow.tracking.customer}`);
-
-  renderList(
-    'trackingTimeline',
-    data.flow.tracking.events,
-    (event) => `
+  renderList('trackingTimeline', data.flow.tracking.events, (event) => `
     <div class="track-step ${event.status === 'done' ? 'done' : event.status === 'current' ? 'current' : ''}">
-      <b>${event.title}</b><div>${event.time}</div>
+      <b>${escapeHtml(event.title)}</b><div>${escapeHtml(event.time)}</div>
     </div>
-  `
-  );
+  `);
+}
+
+async function initLogin() {
+  const data = await loadData();
+  hydrateBrandChrome(data);
+  setText('loginHint', `Try ${data.forms.login.email} / ${data.forms.login.password}`);
+  document.getElementById('loginEmail').value = data.forms.login.email;
+  const form = document.getElementById('loginForm');
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+    const message = document.getElementById('loginMessage');
+    if (email === data.forms.login.email && password === data.forms.login.password) {
+      localStorage.setItem(sessionStorageKey, JSON.stringify({ name: data.forms.login.name, email }));
+      message.textContent = 'Mock login successful. Redirecting to create a gift...';
+      window.setTimeout(() => { window.location.href = 'create-profile.html'; }, 700);
+    } else {
+      message.textContent = 'Use the demo credentials shown above. This is a mock login only.';
+    }
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -346,4 +400,5 @@ document.addEventListener('DOMContentLoaded', () => {
   if (page === 'customize') initCustomize();
   if (page === 'review-checkout') initReviewCheckout();
   if (page === 'track-order') initTrackOrder();
+  if (page === 'login') initLogin();
 });
