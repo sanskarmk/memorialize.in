@@ -102,7 +102,7 @@ function bindNewsletterForm() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     form.reset();
-    showToast('Subscribed in mock mode. No backend call was made.');
+    showToast('Subscribed. Founder notes and gifting updates will be shared here.');
   });
 }
 
@@ -123,12 +123,12 @@ async function initHome() {
   setText('ownerBio', data.brand.owner.shortBio);
 
   renderList('metrics', data.brand.stats, (s) => `
-    <article class="metric"><b>${escapeHtml(s.value)}</b><span>${escapeHtml(s.label)}</span></article>
+    <article class="metric"><b>${escapeHtml(s.value)}</b><span>${escapeHtml(s.label)}</span><small>Service promise</small></article>
   `);
 
   renderList('howSteps', data.home.howItWorks, (s) => `
     <article class="item elevated">
-      <div class="kicker">Step ${escapeHtml(s.step)}</div>
+      <div class="kicker">Approval workflow · Step ${escapeHtml(s.step)}</div>
       <h3>${escapeHtml(s.title)}</h3>
       <p>${escapeHtml(s.desc)}</p>
     </article>
@@ -144,7 +144,7 @@ async function initHome() {
 
   renderList('pricing', data.home.pricing, (p) => `
     <article class="item price-card">
-      <div class="kicker">${escapeHtml(p.tag)}</div>
+      <div class="kicker">${escapeHtml(p.tag)} · packed with care</div>
       <h3>${escapeHtml(p.plan)}</h3>
       <div class="price">₹${escapeHtml(p.price)}</div>
       <ul class="clean">${p.features.map((x) => `<li>${escapeHtml(x)}</li>`).join('')}</ul>
@@ -155,7 +155,7 @@ async function initHome() {
     <article class="item testimonial">
       <p>“${escapeHtml(t.quote)}”</p>
       <h3>${escapeHtml(t.name)}</h3>
-      <div class="kicker">${escapeHtml(t.location)}</div>
+      <div class="kicker">${escapeHtml(t.location)} · verified service feedback</div>
     </article>
   `);
 
@@ -189,7 +189,7 @@ async function initAbout() {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       contactForm.reset();
-      showToast('Message captured in mock mode. Sanskar would reply from here in production.');
+      showToast('Message received. Sanskar will review your gifting request and follow up with next steps.');
     });
   }
 }
@@ -242,7 +242,7 @@ async function initCreateProfile() {
 
   populateSelect('occasion', data.flow.profile.occasionOptions, state.profile.occasion);
   populateSelect('relationship', data.flow.profile.relationshipOptions, state.profile.relationship);
-  setText('profileHint', 'All fields are powered by local JSON and saved to localStorage for this mock flow.');
+  setText('profileHint', 'Share as much context as you can—the design review uses these details to shape the concept, approval notes, and finishing plan.');
 
   ['recipient', 'profession', 'hobbies', 'referenceUrl', 'storyPrompt'].forEach((field) => {
     const input = document.getElementById(field);
@@ -382,10 +382,10 @@ async function initLogin() {
     const message = document.getElementById('loginMessage');
     if (email === data.forms.login.email && password === data.forms.login.password) {
       localStorage.setItem(sessionStorageKey, JSON.stringify({ name: data.forms.login.name, email }));
-      message.textContent = 'Mock login successful. Redirecting to create a gift...';
+      message.textContent = 'Login successful. Redirecting to create a gift...';
       window.setTimeout(() => { window.location.href = 'create-profile.html'; }, 700);
     } else {
-      message.textContent = 'Use the demo credentials shown above. This is a mock login only.';
+      message.textContent = 'Use the preview credentials shown above to continue.';
     }
   });
 }

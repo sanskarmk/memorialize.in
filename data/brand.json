@@ -3,27 +3,50 @@
     "name": "Memorialize",
     "tagline": "Custom keepsakes for people you never want to forget.",
     "heroTitle": "Personalized 3D gifts, crafted like a boutique brand.",
-    "heroSubtitle": "Memorialize turns stories, professions, hobbies, and tiny emotional details into premium custom figurines, display pieces, and gift-ready keepsakes.",
+    "heroSubtitle": "Memorialize turns stories, professions, hobbies, and tiny emotional details into premium custom figurines, display pieces, and gift-ready keepsakes with approval-led design, careful production, and protective packaging.",
     "heroImage": "https://images.pexels.com/photos/19125123/pexels-photo-19125123.jpeg?auto=compress&cs=tinysrgb&w=1200",
     "owner": {
       "name": "Sanskar",
       "role": "Founder & Memory Artist",
       "shortBio": "Sanskar started Memorialize as a passion-led studio for turning feelings into physical keepsakes. He enjoys listening to personal stories, finding the one detail that matters, and shaping it into a gift that feels intimate, premium, and deeply personal.",
       "quote": "For me, a gift is not an object. It is a small monument to a person, a phase, a friendship, or a feeling.",
-      "passions": ["Story-led design", "3D crafted miniatures", "Thoughtful gifting", "Premium unboxing"]
+      "passions": [
+        "Story-led design",
+        "3D crafted miniatures",
+        "Thoughtful gifting",
+        "Premium unboxing"
+      ]
     },
     "stats": [
-      { "value": "4K+", "label": "Gifts conceptualized" },
-      { "value": "98%", "label": "Mock satisfaction score" },
-      { "value": "5–8 days", "label": "Typical dispatch window" }
+      {
+        "value": "10+",
+        "label": "Quality checkpoints"
+      },
+      {
+        "value": "5–8 days",
+        "label": "Dispatch window after approval"
+      },
+      {
+        "value": "1:1",
+        "label": "Dedicated design review"
+      }
     ]
   },
   "about": {
     "mission": "Memorialize exists for people who want gifting to feel personal again. The studio blends AI-assisted concepting, story-first design, and handcrafted finishing to create pieces that look premium and feel emotionally specific.",
     "values": [
-      { "title": "Emotion before object", "desc": "Every design begins with the person, memory, relationship, and occasion—not a generic product template." },
-      { "title": "Boutique quality", "desc": "Mock approvals, finish choices, engraving, packaging, and quality checkpoints make the experience feel curated." },
-      { "title": "Technology with taste", "desc": "AI helps explore directions quickly, while human judgment keeps the final piece tasteful, warm, and brand-worthy." }
+      {
+        "title": "Emotion before object",
+        "desc": "Every design begins with the person, memory, relationship, and occasion—not a generic product template."
+      },
+      {
+        "title": "Approval-led craft",
+        "desc": "Concept previews, revision notes, finish choices, engraving, and final confirmation keep customers involved before production begins."
+      },
+      {
+        "title": "Production care",
+        "desc": "Each keepsake moves through print preparation, finishing, packaging checks, and support follow-up so the gift arrives ready to present."
+      }
     ]
   }
 }
