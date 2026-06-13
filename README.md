@@ -66,6 +66,10 @@ Then open:
 - `http://localhost:8080/about.html`
 - `http://localhost:8080/stories.html`
 
+## Demo implementation notes
+
+This repository is currently a static front-end demo. Customer-facing pages should avoid infrastructure disclaimers; implementation details belong here instead. The prototype uses local JSON data, browser localStorage, and static pages so the experience can be reviewed without a backend or payment integration.
+
 ## Deployment
 
 Deploy as a static site to platforms like:

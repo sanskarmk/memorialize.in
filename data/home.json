@@ -1,30 +1,116 @@
 {
   "howItWorks": [
-    { "step": "01", "title": "Share the story", "desc": "Add the recipient's name, occasion, profession, relationship, interests, reference image, and emotional prompt." },
-    { "step": "02", "title": "Preview concepts", "desc": "Choose from polished mock AI directions that show pose, mood, palette, base style, and gifting intent." },
-    { "step": "03", "title": "Customize details", "desc": "Select size, finish, color language, packaging, engraving, and special notes before production." },
-    { "step": "04", "title": "Approve and track", "desc": "Place a mock order, review summary, and follow a live-like production timeline until delivery." }
+    {
+      "step": "01",
+      "title": "Share the story",
+      "desc": "Add the recipient's name, occasion, profession, relationship, interests, reference image, and the small emotional details that should show up in the keepsake."
+    },
+    {
+      "step": "02",
+      "title": "Review the concept",
+      "desc": "Receive a polished design direction with pose, mood, palette, base style, and gifting intent before anything moves into production."
+    },
+    {
+      "step": "03",
+      "title": "Approve every detail",
+      "desc": "Confirm size, finish, color language, packaging, engraving, and revision notes through a clear approval workflow."
+    },
+    {
+      "step": "04",
+      "title": "Craft, pack, support",
+      "desc": "After approval, the piece moves through production care, protective gift packaging, dispatch updates, and support if anything needs attention."
+    }
   ],
   "categories": [
-    { "type": "Professional", "name": "Career Milestone Figurines", "desc": "Doctor, founder, chef, teacher, artist, athlete, or corporate farewell pieces with signature props." },
-    { "type": "Relationships", "name": "Family & Couple Keepsakes", "desc": "Warm story-backed gifts for parents, partners, siblings, weddings, anniversaries, and birthdays." },
-    { "type": "Memory", "name": "Pet & Tribute Pieces", "desc": "Sensitive keepsakes for beloved pets, special people, or moments that deserve a lasting form." },
-    { "type": "Festive", "name": "Seasonal Gift Drops", "desc": "Curated mock collections for Diwali, New Year, housewarmings, weddings, and team celebrations." }
+    {
+      "type": "Professional",
+      "name": "Career Milestone Figurines",
+      "desc": "Doctor, founder, chef, teacher, artist, athlete, or corporate farewell pieces with signature props."
+    },
+    {
+      "type": "Relationships",
+      "name": "Family & Couple Keepsakes",
+      "desc": "Warm story-backed gifts for parents, partners, siblings, weddings, anniversaries, and birthdays."
+    },
+    {
+      "type": "Memory",
+      "name": "Pet & Tribute Pieces",
+      "desc": "Sensitive keepsakes for beloved pets, special people, or moments that deserve a lasting form."
+    },
+    {
+      "type": "Festive",
+      "name": "Seasonal Gift Drops",
+      "desc": "Curated seasonal collections for Diwali, New Year, housewarmings, weddings, and team celebrations."
+    }
   ],
   "pricing": [
-    { "plan": "Mini", "price": "999", "tag": "Desk-ready", "features": ["8 cm keepsake", "Standard finish", "Name card", "Basic packaging"] },
-    { "plan": "Classic", "price": "1499", "tag": "Most chosen", "features": ["12 cm figurine", "Enhanced detailing", "Gift-ready box", "One revision round"] },
-    { "plan": "Signature", "price": "2499", "tag": "Premium", "features": ["15 cm hero piece", "Premium finish", "Engraved base", "Luxury unboxing"] }
+    {
+      "plan": "Mini",
+      "price": "999",
+      "tag": "Desk-ready",
+      "features": [
+        "8 cm keepsake",
+        "Standard finish",
+        "Name card",
+        "Protective basic packaging"
+      ]
+    },
+    {
+      "plan": "Classic",
+      "price": "1499",
+      "tag": "Most chosen",
+      "features": [
+        "12 cm figurine",
+        "Enhanced detailing",
+        "Gift-ready box",
+        "One design revision round"
+      ]
+    },
+    {
+      "plan": "Signature",
+      "price": "2499",
+      "tag": "Premium",
+      "features": [
+        "15 cm hero piece",
+        "Premium finish",
+        "Engraved base",
+        "Luxury unboxing with support check-in"
+      ]
+    }
   ],
   "testimonials": [
-    { "name": "Megha A.", "location": "Gurugram", "quote": "The whole experience felt premium, from concept preview to the final packaging." },
-    { "name": "Varun P.", "location": "Pune", "quote": "It did not feel like a random custom gift. It felt like someone actually understood the story." },
-    { "name": "Ankit & Rhea", "location": "Mumbai", "quote": "Our anniversary piece became the centerpiece of the celebration." }
+    {
+      "name": "Megha A.",
+      "location": "Gurugram",
+      "quote": "The design review caught the exact stethoscope detail we wanted, and the gift box arrived ready to hand over."
+    },
+    {
+      "name": "Varun P.",
+      "location": "Pune",
+      "quote": "The approval step made me comfortable ordering a custom piece. The final figurine matched the profession, outfit, and inside joke we shared."
+    },
+    {
+      "name": "Ankit & Rhea",
+      "location": "Mumbai",
+      "quote": "Our anniversary keepsake came with careful finishing and packaging, so it felt like a planned premium gift instead of a last-minute custom order."
+    }
   ],
   "faq": [
-    { "q": "Is this connected to a backend?", "a": "No. This demo uses local JSON mock data, localStorage, and static pages so the UI can be reviewed without infrastructure." },
-    { "q": "How accurate are AI previews?", "a": "The mock previews represent style direction. A real production version would include approval and revision steps before printing." },
-    { "q": "Can customers request changes?", "a": "Yes. The customization and checkout flows include notes, engraving, packaging, and contact details for revisions." },
-    { "q": "What makes it feel personalized?", "a": "The flow captures recipient details, relationship context, hobbies, reference imagery, owner-led storytelling, and keepsake-specific finishing options." }
+    {
+      "q": "How does the approval workflow work?",
+      "a": "You share the story first, review a concept direction, request changes if needed, and approve the final details before the keepsake moves into production."
+    },
+    {
+      "q": "How accurate are concept previews?",
+      "a": "Concept previews set the pose, mood, styling, and personalization direction. Final production includes human design review and practical adjustments for a durable finished piece."
+    },
+    {
+      "q": "Can customers request changes?",
+      "a": "Yes. The customization flow collects notes for outfit details, props, engraving, packaging, and contact preferences so revisions can be handled before approval."
+    },
+    {
+      "q": "How is the gift packed and supported?",
+      "a": "Each order is checked for finish quality, secured in presentation-ready packaging, and supported with dispatch updates plus follow-up help if anything arrives unexpectedly."
+    }
   ]
 }
