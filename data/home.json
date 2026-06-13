@@ -1,15 +1,15 @@
 {
   "howItWorks": [
     { "step": "01", "title": "Share the story", "desc": "Add the recipient's name, occasion, profession, relationship, interests, reference image, and emotional prompt." },
-    { "step": "02", "title": "Preview concepts", "desc": "Choose from polished mock AI directions that show pose, mood, palette, base style, and gifting intent." },
+    { "step": "02", "title": "Preview concepts", "desc": "Choose from polished concept directions that show pose, mood, palette, base style, and gifting intent." },
     { "step": "03", "title": "Customize details", "desc": "Select size, finish, color language, packaging, engraving, and special notes before production." },
-    { "step": "04", "title": "Approve and track", "desc": "Place a mock order, review summary, and follow a live-like production timeline until delivery." }
+    { "step": "04", "title": "Approve and track", "desc": "Confirm your order, review the summary, and follow production updates until delivery." }
   ],
   "categories": [
     { "type": "Professional", "name": "Career Milestone Figurines", "desc": "Doctor, founder, chef, teacher, artist, athlete, or corporate farewell pieces with signature props." },
     { "type": "Relationships", "name": "Family & Couple Keepsakes", "desc": "Warm story-backed gifts for parents, partners, siblings, weddings, anniversaries, and birthdays." },
     { "type": "Memory", "name": "Pet & Tribute Pieces", "desc": "Sensitive keepsakes for beloved pets, special people, or moments that deserve a lasting form." },
-    { "type": "Festive", "name": "Seasonal Gift Drops", "desc": "Curated mock collections for Diwali, New Year, housewarmings, weddings, and team celebrations." }
+    { "type": "Festive", "name": "Seasonal Gift Drops", "desc": "Curated seasonal collections for Diwali, New Year, housewarmings, weddings, and team celebrations." }
   ],
   "pricing": [
     { "plan": "Mini", "price": "999", "tag": "Desk-ready", "features": ["8 cm keepsake", "Standard finish", "Name card", "Basic packaging"] },
@@ -22,9 +22,9 @@
     { "name": "Ankit & Rhea", "location": "Mumbai", "quote": "Our anniversary piece became the centerpiece of the celebration." }
   ],
   "faq": [
-    { "q": "Is this connected to a backend?", "a": "No. This demo uses local JSON mock data, localStorage, and static pages so the UI can be reviewed without infrastructure." },
-    { "q": "How accurate are AI previews?", "a": "The mock previews represent style direction. A real production version would include approval and revision steps before printing." },
+    { "q": "How do I start an order?", "a": "Share the recipient details, occasion, reference images, and personalization notes. The studio reviews your brief and guides you through concept approval before production begins." },
+    { "q": "How accurate are AI previews?", "a": "The previews represent the intended style direction, pose, and finish. Final production includes review checkpoints and revision support before your keepsake is made." },
     { "q": "Can customers request changes?", "a": "Yes. The customization and checkout flows include notes, engraving, packaging, and contact details for revisions." },
-    { "q": "What makes it feel personalized?", "a": "The flow captures recipient details, relationship context, hobbies, reference imagery, owner-led storytelling, and keepsake-specific finishing options." }
+    { "q": "What makes it feel personalized?", "a": "The flow captures recipient details, relationship context, hobbies, reference imagery, studio-led storytelling, and keepsake-specific finishing options." }
   ]
 }
