@@ -93,9 +93,26 @@ ul.clean li::before { content: "✓"; color: var(--sage); font-weight: 900; marg
 details { border: 1px solid var(--line); border-radius: 18px; padding: 15px 16px; background: rgba(255,255,255,.68); }
 summary { cursor: pointer; font-weight: 800; }
 details p { margin-top: 8px; color: var(--muted); }
-.owner-strip { display: grid; grid-template-columns: .8fr 1.2fr; gap: 16px; align-items: stretch; }
-.owner-mark { min-height: 260px; display: grid; place-items: center; background: linear-gradient(135deg, var(--brand-strong), var(--brand)); color: #fff; border-radius: var(--radius); }
-.owner-mark span { font-family: Syne, sans-serif; font-size: clamp(4rem, 12vw, 8rem); font-weight: 800; }
+.owner-strip { display: grid; grid-template-columns: .72fr 1.28fr; gap: 18px; align-items: stretch; }
+.owner-mark {
+  position: relative; min-height: 280px; display: grid; place-items: center; align-content: center; gap: 10px;
+  overflow: hidden; isolation: isolate; padding: 34px; text-align: center; color: var(--brand-strong);
+  background:
+    linear-gradient(rgba(255,250,242,.84), rgba(255,250,242,.84)),
+    repeating-linear-gradient(45deg, rgba(199,146,79,.16) 0 1px, transparent 1px 12px),
+    radial-gradient(circle at center, rgba(199,146,79,.24), transparent 66%);
+  border: 1px solid rgba(74,36,21,.24); border-radius: var(--radius);
+  box-shadow: inset 0 0 0 10px rgba(255,255,255,.42), inset 0 0 0 11px rgba(199,146,79,.28), var(--shadow);
+}
+.owner-mark::before, .owner-mark::after { content: ""; position: absolute; inset: 24px; border: 1px solid rgba(124,63,34,.32); border-radius: 999px; z-index: -1; }
+.owner-mark::after { inset: 42px; border-style: dashed; opacity: .72; }
+.owner-mark span {
+  display: grid; place-items: center; width: clamp(92px, 16vw, 138px); aspect-ratio: 1; border-radius: 50%;
+  border: 1px solid rgba(74,36,21,.34); background: rgba(255,255,255,.52);
+  font-family: Syne, sans-serif; font-size: clamp(3.5rem, 8vw, 5.8rem); line-height: 1; font-weight: 800; letter-spacing: -.08em;
+  box-shadow: inset 0 0 0 8px rgba(199,146,79,.13);
+}
+.owner-mark small { max-width: 18ch; color: var(--muted); font-size: .72rem; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
 .pill-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 .pill-list span { border: 1px solid var(--line); background: rgba(255,255,255,.7); border-radius: 999px; padding: 8px 12px; color: var(--muted); font-size: .9rem; }
 .quote { border-left: 4px solid var(--gold); padding-left: 16px; font-family: Syne, sans-serif; font-size: 1.25rem; line-height: 1.45; margin: 18px 0; }
