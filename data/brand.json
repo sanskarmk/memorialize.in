@@ -8,22 +8,46 @@
     "owner": {
       "name": "Sanskar",
       "role": "Founder & Memory Artist",
-      "shortBio": "Sanskar started Memorialize as a passion-led studio for turning feelings into physical keepsakes. He enjoys listening to personal stories, finding the one detail that matters, and shaping it into a gift that feels intimate, premium, and deeply personal.",
+      "shortBio": "Memorialize is shaped by founder-led standards: clear briefs, thoughtful concept reviews, careful material choices, and dependable production checkpoints. Every order is handled with client care, quality control, and delivery discipline so emotional gifts arrive polished, personal, and ready to present.",
       "quote": "For me, a gift is not an object. It is a small monument to a person, a phase, a friendship, or a feeling.",
-      "passions": ["Story-led design", "3D crafted miniatures", "Thoughtful gifting", "Premium unboxing"]
+      "passions": [
+        "Story-led design",
+        "3D crafted miniatures",
+        "Thoughtful gifting",
+        "Premium unboxing"
+      ],
+      "personalStory": "Sanskar started Memorialize as a passion-led studio for turning feelings into physical keepsakes. He enjoys listening to personal stories, finding the one detail that matters, and shaping it into a gift that feels intimate, premium, and deeply personal."
     },
     "stats": [
-      { "value": "4K+", "label": "Gifts conceptualized" },
-      { "value": "98%", "label": "Mock satisfaction score" },
-      { "value": "5–8 days", "label": "Typical dispatch window" }
+      {
+        "value": "4K+",
+        "label": "Gifts conceptualized"
+      },
+      {
+        "value": "98%",
+        "label": "Mock satisfaction score"
+      },
+      {
+        "value": "5–8 days",
+        "label": "Typical dispatch window"
+      }
     ]
   },
   "about": {
     "mission": "Memorialize exists for people who want gifting to feel personal again. The studio blends AI-assisted concepting, story-first design, and handcrafted finishing to create pieces that look premium and feel emotionally specific.",
     "values": [
-      { "title": "Emotion before object", "desc": "Every design begins with the person, memory, relationship, and occasion—not a generic product template." },
-      { "title": "Boutique quality", "desc": "Mock approvals, finish choices, engraving, packaging, and quality checkpoints make the experience feel curated." },
-      { "title": "Technology with taste", "desc": "AI helps explore directions quickly, while human judgment keeps the final piece tasteful, warm, and brand-worthy." }
+      {
+        "title": "Emotion before object",
+        "desc": "Every design begins with the person, memory, relationship, and occasion—not a generic product template."
+      },
+      {
+        "title": "Boutique quality",
+        "desc": "Mock approvals, finish choices, engraving, packaging, and quality checkpoints make the experience feel curated."
+      },
+      {
+        "title": "Technology with taste",
+        "desc": "AI helps explore directions quickly, while human judgment keeps the final piece tasteful, warm, and brand-worthy."
+      }
     ]
   }
 }

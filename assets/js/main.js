@@ -175,6 +175,7 @@ async function initAbout() {
   setText('ownerName', data.brand.owner.name);
   setText('ownerRole', data.brand.owner.role);
   setText('ownerBio', data.brand.owner.shortBio);
+  setText('ownerPersonalStory', data.brand.owner.personalStory);
   setText('ownerQuote', data.brand.owner.quote);
   renderList('ownerPassions', data.brand.owner.passions, (passion) => `<span>${escapeHtml(passion)}</span>`);
   renderList('aboutValues', data.about.values, (v) => `
