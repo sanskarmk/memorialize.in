@@ -36,7 +36,7 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid var(--line);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 0; }
-.logo { font-family: Syne, sans-serif; font-size: 1.05rem; letter-spacing: .14em; font-weight: 800; }
+.logo { font-family: "Playfair Display", Georgia, serif; font-size: 1.05rem; letter-spacing: .14em; font-weight: 800; }
 .logo span { color: var(--brand); }
 .links { display: flex; align-items: center; gap: 20px; color: var(--muted); font-size: .93rem; }
 .links a:hover { color: var(--brand-strong); }
@@ -59,8 +59,8 @@ img { max-width: 100%; display: block; }
   background: rgba(255,255,255,.72); border: 1px solid var(--line); border-radius: 999px; padding: 9px 13px;
   box-shadow: 0 10px 24px rgba(74, 36, 21, .06);
 }
-h1 { font-family: Syne, sans-serif; font-size: clamp(2.45rem, 5.9vw, 5.65rem); line-height: .96; letter-spacing: -0.055em; font-weight: 800; margin: 18px 0; }
-h2 { font-family: Syne, sans-serif; }
+h1 { font-family: "Playfair Display", Georgia, serif; font-size: clamp(2.45rem, 5.9vw, 5.65rem); line-height: .96; letter-spacing: -0.025em; font-weight: 800; margin: 18px 0; }
+h2 { font-family: "Playfair Display", Georgia, serif; }
 .grad { color: var(--text); }
 .lead { color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.16rem); line-height: 1.78; max-width: 62ch; }
 .hero-actions { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 12px; }
@@ -71,10 +71,10 @@ h2 { font-family: Syne, sans-serif; }
 .preview-image { width: 100%; height: 300px; object-fit: cover; border-radius: 20px; border: 1px solid var(--line); margin: 14px 0 16px; }
 .metrics { margin-top: 24px; display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
 .metric { border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.62); padding: 14px; }
-.metric b { display:block; font-family: Syne, sans-serif; font-size: 1.35rem; margin-bottom: 4px; }
+.metric b { display:block; font-family: "Playfair Display", Georgia, serif; font-size: 1.35rem; margin-bottom: 4px; }
 .metric span { color: var(--muted); font-size: .86rem; }
 .section { padding: 62px 0; }
-.section h2 { font-size: clamp(1.8rem, 3.4vw, 3.1rem); letter-spacing: -0.04em; margin-bottom: 10px; }
+.section h2 { font-size: clamp(1.8rem, 3.4vw, 3.1rem); letter-spacing: -0.018em; margin-bottom: 10px; }
 .section .sub, .sub { color: var(--muted); margin-bottom: 22px; line-height: 1.7; }
 .section-heading { display: flex; justify-content: space-between; gap: 18px; align-items: end; margin-bottom: 22px; }
 .section-heading .sub { max-width: 56ch; margin-bottom: 0; }
@@ -86,7 +86,7 @@ h2 { font-family: Syne, sans-serif; }
 .kicker { font-size: .72rem; color: var(--brand); text-transform: uppercase; letter-spacing: .11em; font-weight: 900; margin-bottom: 8px; }
 .item h3 { font-size: 1.18rem; margin-bottom: 8px; letter-spacing: -0.02em; }
 .item p { color: var(--muted); font-size: .95rem; line-height: 1.7; }
-.price { font-family: Syne, sans-serif; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.04em; margin: 8px 0; }
+.price { font-family: "Playfair Display", Georgia, serif; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.018em; margin: 8px 0; }
 ul.clean { list-style: none; display: grid; gap: 8px; color: var(--muted); font-size: .94rem; }
 ul.clean li::before { content: "✓"; color: var(--sage); font-weight: 900; margin-right: 8px; }
 .faq { display: grid; gap: 10px; }
@@ -95,10 +95,10 @@ summary { cursor: pointer; font-weight: 800; }
 details p { margin-top: 8px; color: var(--muted); }
 .owner-strip { display: grid; grid-template-columns: .8fr 1.2fr; gap: 16px; align-items: stretch; }
 .owner-mark { min-height: 260px; display: grid; place-items: center; background: linear-gradient(135deg, var(--brand-strong), var(--brand)); color: #fff; border-radius: var(--radius); }
-.owner-mark span { font-family: Syne, sans-serif; font-size: clamp(4rem, 12vw, 8rem); font-weight: 800; }
+.owner-mark span { font-family: "Playfair Display", Georgia, serif; font-size: clamp(4rem, 12vw, 8rem); font-weight: 800; }
 .pill-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 .pill-list span { border: 1px solid var(--line); background: rgba(255,255,255,.7); border-radius: 999px; padding: 8px 12px; color: var(--muted); font-size: .9rem; }
-.quote { border-left: 4px solid var(--gold); padding-left: 16px; font-family: Syne, sans-serif; font-size: 1.25rem; line-height: 1.45; margin: 18px 0; }
+.quote { border-left: 4px solid var(--gold); padding-left: 16px; font-family: "Playfair Display", Georgia, serif; font-size: 1.25rem; line-height: 1.45; margin: 18px 0; }
 .stepper { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
 .stepper span { border: 1px solid var(--line); background: rgba(255,255,255,.68); color: var(--muted); border-radius: 999px; padding: 8px 12px; font-size: .82rem; font-weight: 800; }
 .stepper span.active { color: #fff; background: var(--brand); border-color: var(--brand); }
